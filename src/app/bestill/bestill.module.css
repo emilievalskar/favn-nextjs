@@ -1,0 +1,115 @@
+.bookSplit {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bookLeft {
+  padding: 160px 72px 80px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bookH1 {
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 5.5vw, 76px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+}
+.bookH1 em { font-style: italic; color: var(--accent); }
+
+.bookIntro {
+  font-size: 16px;
+  color: var(--mid);
+  max-width: 400px;
+  line-height: 1.85;
+  margin-bottom: 60px;
+}
+
+/* Location cards */
+.locCard {
+  background: var(--bg-grey);
+  padding: 44px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  border-left: 2px solid transparent;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  margin-bottom: 3px;
+}
+.locCard:hover {
+  background: #2A2B25;
+  border-left-color: var(--accent);
+  transform: translateX(3px);
+}
+.locCard:hover .lcName,
+.locCard:hover .lcAddr,
+.locCard:hover .lcArrow { color: white; }
+.locCard:hover .lcTag   { color: rgba(255,255,255,.4); }
+
+.lcTag {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  transition: color 0.3s;
+}
+
+.lcName {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 300;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.lcAddr {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.7;
+  transition: color 0.3s;
+}
+
+.lcArrow {
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--mid);
+  transition: color 0.3s;
+}
+
+.bookRight {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Info section */
+.infoSection {
+  background: var(--bg-grey);
+  padding: 100px 72px;
+}
+
+.infoGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 960px) {
+  .bookSplit { grid-template-columns: 1fr; }
+  .bookRight { display: none; }
+  .bookLeft { padding: 140px 28px 80px; }
+  .infoSection { padding: 72px 28px; }
+  .infoGrid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,208 @@
+.main {
+  background: var(--bg);
+  padding: 80px 64px;
+}
+
+.accWrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accIntro {
+  margin-bottom: 60px;
+}
+.accIntro p {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.85;
+  max-width: 560px;
+}
+
+.accItem {
+  border-top: 1px solid var(--border);
+}
+.accItem:last-of-type {
+  border-bottom: 1px solid var(--border);
+}
+
+.accTrigger {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+  gap: 24px;
+  font-family: var(--font-sans);
+  text-align: left;
+}
+
+.accTriggerLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.accNum {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--taupe);
+  letter-spacing: 0.12em;
+  min-width: 24px;
+}
+
+.accTitle {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.accSub {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-left: 2px;
+  margin-top: 4px;
+}
+
+/* Plus/minus icon */
+.accIcon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, border-color 0.25s;
+  position: relative;
+}
+.accIcon::before,
+.accIcon::after {
+  content: '';
+  position: absolute;
+  background: var(--mid);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.accIcon::before { width: 10px; height: 1px; }
+.accIcon::after  { width: 1px;  height: 10px; }
+
+.accIconOpen {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+}
+.accIconOpen::before { background: white; }
+.accIconOpen::after  { background: white; opacity: 0; }
+
+.accBody {
+  padding-bottom: 40px;
+}
+
+.accNote {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border-left: 2px solid var(--accent);
+  background: rgba(180,154,106,.05);
+}
+
+/* Treatment rows */
+.tList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 32px;
+}
+
+.tEntry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 16px 32px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.tEntry:last-child { border-bottom: none; }
+
+.tEntryName {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+
+.tEntryDesc {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.65;
+  margin-top: 4px;
+}
+
+.tEntryRight {
+  text-align: right;
+}
+
+.tEntryPrice {
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+.tEntryMeta {
+  font-size: 11px;
+  color: var(--taupe);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* ── GAVEKORT ── */
+.gavekort {
+  background: #2A2B25;
+  padding: 100px 64px;
+}
+
+.gkInner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.gkTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 300;
+  color: white;
+}
+.gkTitle em { font-style: italic; color: rgba(180,154,106,.9); }
+
+.gkText {
+  font-size: 15px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.85;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 960px) {
+  .main { padding: 64px 28px; }
+  .accTitle { font-size: 22px; }
+  .gavekort { padding: 64px 28px; }
+  .gkInner { grid-template-columns: 1fr; gap: 40px; }
+}

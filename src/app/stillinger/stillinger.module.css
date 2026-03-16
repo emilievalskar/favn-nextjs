@@ -1,0 +1,169 @@
+.jobMain {
+  background: var(--bg);
+  padding: 110px 64px;
+}
+
+.jobLayout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.jt {}
+
+.jtP {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.jobAside {
+  position: sticky;
+  top: 120px;
+}
+
+.contactCta {
+  background: var(--bg-grey);
+  padding: 52px 44px;
+  border-top: 3px solid var(--accent);
+}
+.contactCta h3 {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+.contactCta > p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.ccRow {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.ccLbl {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  min-width: 52px;
+}
+
+.ccVal a {
+  color: var(--charcoal);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.ccVal a:hover { border-color: var(--accent); }
+
+.applyForm {
+  margin-top: 32px;
+  border-top: 1px solid var(--border);
+  padding-top: 28px;
+}
+.applyForm h4 {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 18px;
+}
+
+.af {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.fg label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+.fg input,
+.fg textarea {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  padding: 10px 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+.fg input:focus,
+.fg textarea:focus { border-bottom-color: var(--accent); }
+.fg textarea { height: 88px; }
+
+.successMsg {
+  padding: 12px 18px;
+  background: rgba(180,154,106,.08);
+  border-left: 2px solid var(--accent);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* ── CULTURE ── */
+.culture {
+  background: #2A2B25;
+  padding: 110px 64px;
+}
+
+.cultureInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cultureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.cc {
+  padding: 44px 36px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.05);
+}
+.cc h4 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 12px;
+}
+.cc p {
+  font-size: 14px;
+  color: rgba(255,255,255,.48);
+  line-height: 1.75;
+}
+
+@media (max-width: 960px) {
+  .jobMain { padding: 80px 28px; }
+  .jobLayout { grid-template-columns: 1fr; gap: 60px; }
+  .jobAside { position: static; }
+  .culture { padding: 80px 28px; }
+  .cultureGrid { grid-template-columns: 1fr; }
+}
