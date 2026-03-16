@@ -114,11 +114,9 @@ export default function SikkerSalongClient() {
           </div>
           <div className={styles.productsGrid}>
             {products.map((prod, i) => (
-              <div key={i} className="reveal" data-delay={`${i * 0.1}s`}>
-                <div className={styles.prodCard}>
-                  <h4>{t(prod.name, lang)}</h4>
-                  <p>{t(prod.desc, lang)}</p>
-                </div>
+              <div key={i} className={`${styles.prodCard} reveal`} data-delay={`${i * 0.1}s`}>
+                <h4>{t(prod.name, lang)}</h4>
+                <p>{t(prod.desc, lang)}</p>
               </div>
             ))}
           </div>

@@ -83,6 +83,12 @@
   animation: fadeUp 0.7s ease forwards 1.2s;
 }
 
+/* Hover effect on book button in hero */
+.heroCta a:hover {
+  background: var(--accent) !important;
+  color: var(--charcoal) !important;
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -138,6 +144,13 @@
   align-items: center;
 }
 
+.introP {
+  font-size: 16px;
+  color: var(--mid);
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
 .introBtns {
   margin-top: 44px;
   display: flex;
@@ -181,118 +194,112 @@
   transform: scale(1.04) !important;
 }
 
+/* Brass badge — original style: light background, gold text */
 .brassBadge {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--accent);
-  color: white;
-  width: 82px;
-  height: 82px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 2;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  gap: 3px;
+  z-index: 4;
 }
 .brassBadge span:first-child {
   font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--accent);
   line-height: 1;
 }
 .brassBadge span:last-child {
   font-size: 7px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.85;
-  line-height: 1.2;
+  color: var(--mid);
+  margin-top: 5px;
 }
 
 /* ── GALLERY ── */
 .gallery {
-  position: relative;
-  overflow: hidden;
+  padding: 0;
+  background: var(--bg-olive);
 }
 
 .mobileGalleryHeader {
   display: none;
-  padding: 64px 28px 0;
 }
 
 .galleryStrip {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  height: 520px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 320px 220px;
+  gap: 3px;
 }
 
 .gp {
-  position: relative;
   overflow: hidden;
-  cursor: pointer;
+  position: relative;
 }
 .gp img {
   transition: transform 0.6s ease !important;
 }
 .gp:hover img {
-  transform: scale(1.04) !important;
+  transform: scale(1.05) !important;
 }
 
-.gpLarge { grid-column: span 2; }
+.gpLarge { grid-row: span 2; }
 
-.galleryLabel {
+.gpHover { position: relative; }
+.gpImgDefault,
+.gpImgHover {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 40px 20px 18px;
-  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
+  inset: 0;
+  transition: opacity 0.6s ease-in-out;
 }
-.gp:hover .galleryLabel { opacity: 1; }
-.galleryLabel span {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
-}
+.gpImgHover { opacity: 0; }
+.gpHover:hover .gpImgDefault { opacity: 0; }
+.gpHover:hover .gpImgHover { opacity: 1; }
 
 .galleryFooter {
-  background: var(--bg-grey);
-  padding: 24px 72px;
+  padding: 40px 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  background: var(--bg-olive);
 }
 .galleryFooter p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--mid);
 }
 .galleryFooter p a {
-  color: var(--charcoal);
+  color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  transition: border-color 0.2s;
 }
-.galleryFooter p a:hover { border-color: var(--accent); }
+.galleryFooter p a:hover { text-decoration: underline; }
 
 /* ── TREATMENTS ── */
 .treatments {
-  background: var(--bg-grey);
-  padding: 100px 64px;
+  background: var(--bg);
+  padding: 110px 64px;
 }
 
 .treatmentsHead {
   max-width: 1100px;
-  margin: 0 auto 60px;
+  margin: 0 auto 64px;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
-  gap: 32px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .treatmentsList {
@@ -303,41 +310,63 @@
   gap: 2px;
 }
 
-.tN {
-  font-family: var(--font-serif);
-  font-size: 44px;
-  font-weight: 300;
-  color: var(--border);
-  line-height: 1;
-  margin-bottom: 16px;
+/* tN, tTitle, tBar, tDesc are defined in globals.css as .t-n, .t-title, .t-bar, .t-desc */
+
+/* ── TATTOO ARTIST ── */
+.tattoo {
+  background: var(--bg);
+  padding: 120px 64px;
 }
 
-.tTitle {
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-bottom: 12px;
-  color: var(--charcoal);
+.tattooLayout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
-.tBar {
-  width: 28px;
-  height: 1px;
-  background: var(--accent);
-  margin-bottom: 16px;
-  opacity: 0.6;
+.tattooPortrait {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
 }
 
-.tDesc {
-  font-size: 14px;
+.tattooContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.tattooText {
+  font-size: 16px;
   color: var(--mid);
-  line-height: 1.75;
+  line-height: 1.9;
+  margin-bottom: 36px;
+}
+
+.tattooGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-bottom: 36px;
+}
+
+.tattooImg {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.tattooImg img {
+  transition: transform 0.6s ease !important;
+}
+.tattooImg:hover img {
+  transform: scale(1.05) !important;
 }
 
 /* ── TESTIMONIALS ── */
 .testimonials {
-  background: var(--bg);
+  background: #2A2B25;
   padding: 110px 64px;
 }
 
@@ -355,25 +384,29 @@
 
 .tQmark {
   font-family: var(--font-serif);
-  font-size: 64px;
-  line-height: 1;
-  color: var(--accent);
-  opacity: 0.4;
-  margin-bottom: 20px;
+  font-size: 80px;
+  line-height: 0;
+  color: rgba(180,154,106,0.25);
+  position: absolute;
+  top: 40px;
+  left: 38px;
 }
 
 .tQuote {
-  font-size: 14px;
-  color: var(--mid);
-  line-height: 1.8;
-  margin-bottom: 28px;
+  font-family: var(--font-serif);
+  font-size: 19px;
   font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  margin-top: 44px;
 }
 
 .tSig {
+  margin-top: 28px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .tDot {
@@ -385,56 +418,50 @@
 }
 
 .tWho {
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: rgba(255,255,255,0.38);
 }
 
 .tStars {
-  font-size: 11px;
   color: var(--accent);
-  margin-top: 4px;
+  font-size: 13px;
+  margin-top: 5px;
 }
 
 /* ── CTA SECTION ── */
 .ctaSection {
   position: relative;
-  min-height: 500px;
+  height: 560px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .ctaSection::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(30,30,26,0.45);
+  background: linear-gradient(to right, rgba(30,30,26,0.92) 0%, rgba(30,30,26,0.6) 60%, rgba(30,30,26,0.25) 100%);
 }
 
 .ctaInner {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 100px 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
 }
 
-.ctaInner .eyebrowOverride {
-  color: rgba(255,255,255,0.7);
-  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
-}
-
-.ctaInner h2 {
+.ctaTitle {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 4.5vw, 64px);
+  font-size: clamp(40px, 5.5vw, 72px);
   font-weight: 300;
   color: white;
-  margin-bottom: 40px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.45);
+  line-height: 1.08;
+  margin-bottom: 36px;
 }
-
-.ctaInner h2 em {
+.ctaTitle em {
   font-style: italic;
   color: rgba(180,154,106,0.9);
 }
@@ -442,34 +469,78 @@
 .ctaBtns {
   display: flex;
   gap: 16px;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
-  .heroContent { padding: 80px 28px 120px; max-width: 100%; }
-  .taglineStrip { padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr; }
+  .hero { min-height: 90vh; }
+  .heroContent { padding: 120px 28px 60px 28px; max-width: 100%; }
+  .heroOverlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.35) 35%,
+        rgba(0,0,0,0.5) 100%
+      );
+  }
+  .heroEyebrow {
+    color: rgba(255,255,255,0.85);
+    text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+  }
+
+  .taglineStrip { padding: 0 28px; flex-wrap: wrap; }
+
   .intro { padding: 80px 28px; }
   .introLayout { grid-template-columns: 1fr; gap: 52px; }
-  .introPhotos { height: 400px; }
-  .mobileGalleryHeader { display: block; }
+  .introPhotos { height: 320px; }
+
+  .mobileGalleryHeader {
+    display: block;
+    padding: 48px 28px 24px;
+    background: var(--bg-olive);
+  }
+
   .galleryStrip {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gpLarge { grid-column: span 2; grid-row: span 1; height: 280px; }
+  .gp { height: 220px; }
+  .galleryFooter { padding: 28px; }
+
+  .treatments { padding: 80px 28px; }
+  .treatmentsList {
     display: flex;
+    flex-direction: row;
     overflow-x: auto;
-    height: 280px;
+    scroll-snap-type: x mandatory;
+    gap: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -28px;
+    padding: 0 28px;
+  }
+  .treatmentsList::-webkit-scrollbar { display: none; }
+
+  .tattoo { padding: 80px 28px; }
+  .tattooLayout { grid-template-columns: 1fr; gap: 48px; }
+  .tattooPortrait { height: 380px; }
+  .tattooGrid { grid-template-columns: repeat(3, 1fr); }
+
+  .testimonials { padding: 80px 28px; }
+  .tGrid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    gap: 2px;
+    margin: 56px -28px 0;
+    padding: 0 28px;
   }
-  .galleryStrip::-webkit-scrollbar { display: none; }
-  .gp { min-width: 220px; scroll-snap-align: start; flex-shrink: 0; }
-  .gpLarge { min-width: 300px; }
-  .galleryFooter { padding: 20px 28px; flex-direction: column; gap: 16px; text-align: center; }
-  .treatments { padding: 80px 28px; }
-  .treatmentsList { grid-template-columns: 1fr; }
-  .treatmentsHead { flex-direction: column; align-items: flex-start; }
-  .testimonials { padding: 80px 28px; }
-  .tGrid { grid-template-columns: 1fr; }
-  .ctaInner { padding: 80px 28px; }
+  .tGrid::-webkit-scrollbar { display: none; }
+
+  .ctaInner { padding: 0 36px; }
 }

@@ -159,7 +159,7 @@ export default function KontaktClient() {
                   href={loc.mapsUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-outline"
+                  className={`btn-outline ${styles.mapBtn}`}
                   style={{ fontSize: 10, padding: '10px 26px' }}
                 >
                   {lang === 'en' ? 'Open in Google Maps' : 'Åpne i Google Maps'}

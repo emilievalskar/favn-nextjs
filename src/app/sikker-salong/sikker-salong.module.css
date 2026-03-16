@@ -119,8 +119,13 @@
 }
 
 .safetyCtaInner .eyebrowOverride {
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
   color: rgba(255,255,255,.7);
   text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  margin-bottom: 18px;
+  display: block;
 }
 
 .safetyCtaTitle {

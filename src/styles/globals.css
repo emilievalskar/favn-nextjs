@@ -12,8 +12,8 @@
   --accent:    #B49A6A;
   --border:    #D8D6CF;
 
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-sans:  'Jost', sans-serif;
+  --font-serif: var(--font-cormorant, 'Cormorant Garamond', serif);
+  --font-sans:  var(--font-jost, 'Jost', sans-serif);
 }
 
 html { scroll-behavior: smooth; }
@@ -376,15 +376,72 @@ footer {
 
 /* ── HOME PAGE: treatment items (used with className="t-item") ── */
 .t-item {
-  background: var(--bg);
-  padding: 44px 36px;
+  background: var(--bg-olive);
+  padding: 48px 40px 44px;
+  transition: background 0.3s;
+  transition-delay: 0s !important;
+  cursor: default;
   position: relative;
+  overflow: hidden;
+}
+.t-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 0;
+  background: var(--accent);
+  transition: height 0.35s ease;
+}
+.t-item:hover::before { height: 100%; }
+.t-item:hover {
+  background: var(--charcoal);
+  transition-delay: 0s !important;
+}
+.t-item:hover .t-n,
+.t-item:hover .t-title,
+.t-item:hover .t-desc {
+  color: rgba(255,255,255,0.85);
+  transition-delay: 0s !important;
+}
+
+.t-n {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--taupe);
+  margin-bottom: 22px;
+  transition: color 0.3s;
+  transition-delay: 0s !important;
+}
+.t-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 14px;
+  transition: color 0.3s;
+  transition-delay: 0s !important;
+}
+.t-bar {
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+  margin-bottom: 14px;
+}
+.t-desc {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.75;
+  transition: color 0.3s;
+  transition-delay: 0s !important;
 }
 
 /* ── HOME PAGE: testimonial blocks (used with className="t-block") ── */
 .t-block {
-  background: var(--bg-grey);
-  padding: 44px 36px;
+  padding: 44px 40px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
 }
 
 /* ── BESTILL PAGE: info cards (used with className="info-card") ── */

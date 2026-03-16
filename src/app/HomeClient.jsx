@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLang } from '../components/LangContext';
 import useReveal from '../components/useReveal';
-import { homeTreatments, testimonials, galleryImages, taglineItems } from '../data/home';
+import { homeTreatments, testimonials } from '../data/home';
 import { BOOK_URL } from '../data/settings';
 import styles from './home.module.css';
 
@@ -23,20 +23,20 @@ export default function HomeClient() {
             alt="FAVN Neglesalong"
             fill
             priority
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
             className={styles.heroImg}
           />
         </div>
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <p className={styles.heroEyebrow}>
-            {lang === 'en' ? 'Nail salon — Oslo' : 'Neglesalong — Oslo'}
+            Majorstuen &amp; Aker Brygge · Oslo
           </p>
           <h1 className={styles.heroTitle}>
             {lang === 'en' ? (
-              <>Nails that<br /><em>strengthen</em><br /><em>and last</em></>
+              <>A place where you can<br /><em>breathe</em></>
             ) : (
-              <>Negler som<br /><em>styrker og</em><br /><em>varer</em></>
+              <>Et sted du kan<br /><em>puste ut</em></>
             )}
           </h1>
           <div className={styles.heroCta}>
@@ -49,12 +49,22 @@ export default function HomeClient() {
 
       {/* ── TAGLINE STRIP ── */}
       <div className={styles.taglineStrip}>
-        {taglineItems.map((item) => (
-          <div key={item.num} className={styles.tsItem}>
-            <span className={styles.tsNum}>{item.num}</span>
-            <span className={styles.tsText}>{t(item.text, lang)}</span>
-          </div>
-        ))}
+        <div className={styles.tsItem}>
+          <span className={styles.tsNum}>01</span>
+          <span className={styles.tsText}>{lang === 'en' ? 'Sterilised equipment' : 'Sterilisert utstyr'}</span>
+        </div>
+        <div className={styles.tsItem}>
+          <span className={styles.tsNum}>02</span>
+          <span className={styles.tsText}>CND Shellac &amp; IBX</span>
+        </div>
+        <div className={styles.tsItem}>
+          <span className={styles.tsNum}>03</span>
+          <span className={styles.tsText}>{lang === 'en' ? 'Two locations' : 'To lokasjoner'}</span>
+        </div>
+        <div className={styles.tsItem}>
+          <span className={styles.tsNum}>04</span>
+          <span className={styles.tsText}>{lang === 'en' ? 'Personal service' : 'Personlig service'}</span>
+        </div>
       </div>
 
       {/* ── ABOUT / INTRO ── */}
@@ -70,12 +80,12 @@ export default function HomeClient() {
               )}
             </h2>
             <div className="divider" />
-            <p style={{ fontSize: 16, color: 'var(--mid)', lineHeight: 1.9, marginBottom: 18 }}>
+            <p className={styles.introP}>
               {lang === 'en'
                 ? "We care deeply about nail health — that's why we use only the finest products, recognised worldwide."
                 : 'Vi er opptatt av god neglehelse — derfor bruker vi kun de beste produktene, anerkjent over hele verden.'}
             </p>
-            <p style={{ fontSize: 16, color: 'var(--mid)', lineHeight: 1.9, marginBottom: 18 }}>
+            <p className={styles.introP}>
               {lang === 'en'
                 ? 'The salon is designed for calm and wellbeing: light walls, blonde furniture, art and green plants. You feel it the moment you step inside.'
                 : 'Salongen er designet for ro og velvære: lyse vegger, blonde møbler, kunst og grønne planter. Du merker det fra det øyeblikket du trer inn.'}
@@ -106,16 +116,35 @@ export default function HomeClient() {
       <div id="gallery" className={styles.gallery}>
         <div className={styles.mobileGalleryHeader}>
           <p className="eyebrow-label">{lang === 'en' ? 'From the salon' : 'Fra salongen'}</p>
-          <h2 className="section-title">{lang === 'en' ? <>See <em>inside</em></> : <>Se <em>innsiden</em></>}</h2>
+          <h2 className="section-title">
+            {lang === 'en' ? <>See <em>inside</em></> : <>Se <em>innsiden</em></>}
+          </h2>
           <div className="divider" />
         </div>
         <div className={styles.galleryStrip}>
-          {galleryImages.map((img) => (
-            <div key={img.src} className={`${styles.gp}${img.large ? ` ${styles.gpLarge}` : ''}`}>
-              <Image src={img.src} alt={img.alt} fill style={{ objectFit: 'cover' }} />
-              <div className={styles.galleryLabel}><span>{t(img.label, lang)}</span></div>
-            </div>
-          ))}
+          <div className={`${styles.gp} ${styles.gpLarge}`}>
+            <img src="/images/galleri-interior.jpg" alt="Interiør" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+          <div className={styles.gp}>
+            <img src="/images/galleri-resepsjon.jpg" alt="Resepsjon" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+          <div className={`${styles.gp} ${styles.gpHover}`}>
+            <img src="/images/galleri-fasade.jpg" alt="Fasade" className={styles.gpImgDefault} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/images/galleri-resepsjon-hover.jpg" alt="Fasade hover" className={styles.gpImgHover} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+          <div className={`${styles.gp} ${styles.gpHover}`}>
+            <img src="/images/galleri-majorstuen.jpg" alt="Majorstuen" className={styles.gpImgDefault} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/images/galleri-majorstuen-hover.jpg" alt="Majorstuen hover" className={styles.gpImgHover} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+          <div className={styles.gp}>
+            <img src="/images/galleri-velvaererom.jpg" alt="Negler" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+          <div className={styles.gp}>
+            <img src="/images/galleri-ekstra.jpg" alt="Interiør" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+          <div className={styles.gp}>
+            <img src="/images/galleri-detaljer.jpg" alt="Detaljer" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
         </div>
         <div className={styles.galleryFooter}>
           <p>
@@ -133,7 +162,9 @@ export default function HomeClient() {
         <div className={`${styles.treatmentsHead} reveal`}>
           <div>
             <p className="eyebrow-label">{lang === 'en' ? 'Treatments' : 'Behandlinger'}</p>
-            <h2 className="section-title">{lang === 'en' ? <>What we <em>offer</em></> : <>Hva vi <em>tilbyr</em></>}</h2>
+            <h2 className="section-title">
+              {lang === 'en' ? <>What we <em>offer</em></> : <>Hva vi <em>tilbyr</em></>}
+            </h2>
           </div>
           <Link href="/behandlinger" className="btn-outline">
             {lang === 'en' ? 'View all treatments' : 'Se alle behandlinger'}
@@ -142,12 +173,66 @@ export default function HomeClient() {
         <div className={styles.treatmentsList}>
           {homeTreatments.map((item, i) => (
             <div key={item.num} className="t-item reveal" data-delay={`${i * 0.09}s`}>
-              <div className={styles.tN}>{item.num}</div>
-              <div className={styles.tTitle}>{t(item.title, lang)}</div>
-              <div className={styles.tBar} />
-              <p className={styles.tDesc}>{t(item.desc, lang)}</p>
+              <div className="t-n">{item.num}</div>
+              <div className="t-title">{t(item.title, lang)}</div>
+              <div className="t-bar" />
+              <p className="t-desc">{t(item.desc, lang)}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── TATTOO ARTIST ── */}
+      <section id="tatovør" className={styles.tattoo}>
+        <div className={styles.tattooLayout}>
+
+          {/* Left: portrait */}
+          <div className={`${styles.tattooPortrait} reveal`}>
+            <Image
+              src="/images/tattoo-artist.jpg"
+              alt="Margrethe Rykkelid — tatovør hos FAVN"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            />
+          </div>
+
+          {/* Right: text + gallery */}
+          <div className={`${styles.tattooContent} reveal`} data-delay="0.12s">
+            <p className="eyebrow-label">
+              {lang === 'en' ? 'Tattoo artist at FAVN' : 'Tatovør hos FAVN'}
+            </p>
+            <h2 className="section-title">
+              {lang === 'en' ? <>Margrethe<br /><em>Rykkelid</em></> : <>Margrethe<br /><em>Rykkelid</em></>}
+            </h2>
+            <div className="divider" />
+            <p className={styles.tattooText}>
+              {lang === 'en'
+                ? 'At FAVN you will also find tattoo artist Margrethe Rykkelid. She works with fine line tattoos and illustrative motifs, often inspired by nature and botanical elements.'
+                : 'Hos FAVN finner du også tatovør Margrethe Rykkelid. Hun jobber med fine line-tatoveringer og illustrative motiver, ofte inspirert av natur og botaniske elementer.'}
+            </p>
+
+            <div className={styles.tattooGrid}>
+              <div className={styles.tattooImg}>
+                <Image src="/images/tattoo-work-1.jpg" alt="Tatovering 1" fill style={{ objectFit: 'cover' }} />
+              </div>
+              <div className={styles.tattooImg}>
+                <Image src="/images/tattoo-work-2.jpg" alt="Tatovering 2" fill style={{ objectFit: 'cover' }} />
+              </div>
+              <div className={styles.tattooImg}>
+                <Image src="/images/tattoo-work-3.jpg" alt="Tatovering 3" fill style={{ objectFit: 'cover' }} />
+              </div>
+            </div>
+
+            <a
+              href="https://www.instagram.com/margrethe.rykkelid/"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline"
+              style={{ alignSelf: 'flex-start' }}
+            >
+              {lang === 'en' ? 'See her work on Instagram' : 'Se arbeidet hennes på Instagram'}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -155,21 +240,23 @@ export default function HomeClient() {
       <section id="testimonials" className={styles.testimonials}>
         <div className={styles.tiInner}>
           <div className="reveal">
-            <p className="eyebrow-label">{lang === 'en' ? 'What clients say' : 'Kundene sier'}</p>
-            <h2 className="section-title">
+            <p className="eyebrow-label" style={{ color: 'rgba(255,255,255,0.3)' }}>
+              {lang === 'en' ? 'What clients say' : 'Kundene sier'}
+            </p>
+            <h2 className="section-title" style={{ color: 'white' }}>
               {lang === 'en' ? <>What others<br /><em>experience</em></> : <>Hva andre<br /><em>opplever</em></>}
             </h2>
-            <div className="divider" />
+            <div className="divider" style={{ background: 'rgba(255,255,255,0.15)' }} />
           </div>
           <div className={styles.tGrid}>
-            {testimonials.map((t, i) => (
+            {testimonials.map((item, i) => (
               <div key={i} className="t-block reveal" data-delay={`${i * 0.1}s`}>
                 <div className={styles.tQmark}>&ldquo;</div>
-                <p className={styles.tQuote}>{t.quote}</p>
+                <p className={styles.tQuote}>{item.quote}</p>
                 <div className={styles.tSig}>
                   <div className={styles.tDot} />
                   <div>
-                    <div className={styles.tWho}>{t.author} — {t.source}</div>
+                    <div className={styles.tWho}>{item.author} — {item.source}</div>
                     <div className={styles.tStars}>★★★★★</div>
                   </div>
                 </div>
@@ -181,13 +268,18 @@ export default function HomeClient() {
 
       {/* ── PHOTO CTA ── */}
       <div id="cta-section" className={styles.ctaSection}>
-        <Image src="/images/cta.jpg" alt="FAVN Neglesalong" fill style={{ objectFit: 'cover' }} />
+        <Image
+          src="/images/cta.jpg"
+          alt="FAVN Neglesalong"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center 70%' }}
+        />
         <div className={styles.ctaInner}>
           <div className="reveal">
-            <p className={styles.eyebrowOverride}>
+            <p className="eyebrow-label" style={{ color: 'rgba(255,255,255,0.45)' }}>
               {lang === 'en' ? 'Ready for a break?' : 'Klar for en pause?'}
             </p>
-            <h2>
+            <h2 className={styles.ctaTitle}>
               {lang === 'en'
                 ? <>Book your treatment<br /><em>today</em></>
                 : <>Bestill din behandling<br /><em>i dag</em></>}

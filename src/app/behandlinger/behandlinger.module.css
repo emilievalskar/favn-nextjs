@@ -186,11 +186,17 @@
 
 .gkTitle {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 4.5vw, 56px);
+  font-size: clamp(48px, 5.5vw, 72px);
   font-weight: 300;
   color: white;
+  line-height: 1.05;
+  margin-top: 8px;
 }
-.gkTitle em { font-style: italic; color: rgba(180,154,106,.9); }
+.gkTitle em {
+  display: block;
+  font-style: italic;
+  color: rgba(180,154,106,.9);
+}
 
 .gkText {
   font-size: 15px;

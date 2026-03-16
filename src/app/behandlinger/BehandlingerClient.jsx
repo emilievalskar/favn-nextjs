@@ -25,7 +25,7 @@ export default function BehandlingerClient() {
         imageSrc="/images/behandlinger.jpg"
         imageAlt="Behandlinger FAVN"
         eyebrow={lang === 'en' ? 'Treatments' : 'Behandlinger'}
-        title={lang === 'en' ? 'Our <em>treatments</em>' : 'Våre <em>behandlinger</em>'}
+        title={lang === 'en' ? 'What we<br><em>offer</em>' : 'Hva vi<br><em>tilbyr</em>'}
         height="50vh"
         minHeight="360px"
       />
@@ -33,22 +33,22 @@ export default function BehandlingerClient() {
       <section id="behandlinger-main" className={styles.main}>
         <div className={styles.accWrap}>
           <div className={styles.accIntro}>
-            <p className="eyebrow-label">{lang === 'en' ? 'Price list' : 'Prisliste'}</p>
-            <h2 className="section-title">
+            <p className="eyebrow-label">{lang === 'en' ? 'Our treatments' : 'Våre behandlinger'}</p>
+            <h2 className="section-title" style={{ marginBottom: 16 }}>
               {lang === 'en' ? <>Choose your <em>treatment</em></> : <>Velg din <em>behandling</em></>}
             </h2>
             <div className="divider" />
             <p>
               {lang === 'en'
-                ? 'Click a category to see treatments and prices. Book directly online.'
-                : 'Klikk på en kategori for å se behandlinger og priser. Book direkte online.'}
+                ? 'Click a category to see all available treatments and prices. All treatments can be booked directly online.'
+                : 'Klikk på en kategori for å se alle tilgjengelige behandlinger og priser. Alle behandlinger kan bestilles direkte online.'}
             </p>
           </div>
 
           {treatmentCategories.map((cat, i) => {
             const isOpen = openId === cat.id;
             return (
-              <div key={cat.id} className={`${styles.accItem}${isOpen ? ` ${styles.open}` : ''} reveal`} data-delay={`${i * 0.05}s`}>
+              <div key={cat.id} className={`${styles.accItem}${isOpen ? ` ${styles.open}` : ''}`}>
                 <button className={styles.accTrigger} onClick={() => toggle(cat.id)}>
                   <div className={styles.accTriggerLeft}>
                     <span className={styles.accNum}>{cat.num}</span>
@@ -60,38 +60,36 @@ export default function BehandlingerClient() {
                   <div className={`${styles.accIcon}${isOpen ? ` ${styles.accIconOpen}` : ''}`} />
                 </button>
 
-                {isOpen && (
-                  <div className={styles.accBody}>
-                    {cat.note && (
-                      <div className={styles.accNote}>{t(cat.note, lang)}</div>
-                    )}
-                    {cat.customBody ? (
-                      <p style={{ fontSize: 14, color: 'var(--mid)', lineHeight: 1.8, marginBottom: 24 }}>
-                        {t(cat.customBody, lang)}
-                      </p>
-                    ) : (
-                      <div className={styles.tList}>
-                        {cat.entries.map((entry, j) => (
-                          <div key={j} className={styles.tEntry}>
-                            <div>
-                              <div className={styles.tEntryName}>{t(entry.name, lang)}</div>
-                              {entry.desc && (
-                                <div className={styles.tEntryDesc}>{t(entry.desc, lang)}</div>
-                              )}
-                            </div>
-                            <div className={styles.tEntryRight}>
-                              <div className={styles.tEntryPrice}>{entry.price}</div>
-                              <div className={styles.tEntryMeta}>{entry.meta}</div>
-                            </div>
+                <div className={styles.accBody} style={{ display: isOpen ? 'block' : 'none' }}>
+                  {cat.note && (
+                    <div className={styles.accNote}>{t(cat.note, lang)}</div>
+                  )}
+                  {cat.customBody ? (
+                    <p style={{ fontSize: 14, color: 'var(--mid)', lineHeight: 1.8, marginBottom: 24 }}>
+                      {t(cat.customBody, lang)}
+                    </p>
+                  ) : (
+                    <div className={styles.tList}>
+                      {cat.entries.map((entry, j) => (
+                        <div key={j} className={styles.tEntry}>
+                          <div>
+                            <div className={styles.tEntryName}>{t(entry.name, lang)}</div>
+                            {entry.desc && (
+                              <div className={styles.tEntryDesc}>{t(entry.desc, lang)}</div>
+                            )}
                           </div>
-                        ))}
-                      </div>
-                    )}
-                    <a href={BOOK_URL} target="_blank" rel="noreferrer" className="btn-dark">
-                      {t(cat.bookLabel, lang)}
-                    </a>
-                  </div>
-                )}
+                          <div className={styles.tEntryRight}>
+                            <div className={styles.tEntryPrice}>{entry.price}</div>
+                            {entry.meta && <div className={styles.tEntryMeta}>{entry.meta}</div>}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <a href={BOOK_URL} target="_blank" rel="noreferrer" className="btn-dark">
+                    {t(cat.bookLabel, lang)}
+                  </a>
+                </div>
               </div>
             );
           })}
@@ -106,7 +104,7 @@ export default function BehandlingerClient() {
               {lang === 'en' ? 'Gift card' : 'Gavekort'}
             </p>
             <h2 className={styles.gkTitle}>
-              {lang === 'en' ? <>Give the gift of<br /><em>wellbeing</em></> : <>Gi bort<br /><em>velvære</em></>}
+              {lang === 'en' ? <>Give the gift of<em>wellbeing</em></> : <>Gi bort<em>velvære</em></>}
             </h2>
             <p className={styles.gkText}>
               {lang === 'en'

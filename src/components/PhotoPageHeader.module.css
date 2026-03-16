@@ -24,7 +24,12 @@
 }
 
 .inner .eyebrowLabel {
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 18px;
+  display: block;
 }
 
 .inner h1 {
