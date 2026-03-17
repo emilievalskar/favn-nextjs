@@ -192,7 +192,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "cf03f6ddc20a0cd5"; }
+/******/ 		__webpack_require__.h = function() { return "501ca9cad947fd3b"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -830,9 +830,9 @@
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = __webpack_require__.hmrS_jsonp = __webpack_require__.hmrS_jsonp || {
 /******/ 			"webpack": 0,
-/******/ 			"css-src_styles_globals_css-node_modules_next_font_google_target_css-node_modules_next_font_go-06cadc": 0,
 /******/ 			"css-src_app_home_module_css": 0,
-/******/ 			"css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_s-44827d": 0
+/******/ 			"css-src_styles_globals_css-node_modules_next_font_google_target_css-node_modules_next_font_go-06cadc": 0,
+/******/ 			"css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = function(chunkId, promises) {
@@ -844,7 +844,7 @@
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(/^(app(\/((((behand|stil)linger|kontakt|sikker\-salong)\/|)page|layout)|\-pages\-internals)|main\-app)$/.test(chunkId)) {
+/******/ 						if(/^(app(\/((((behand|stil)linger|_not\-found|kontakt|om\-oss|sikker\-salong)\/|)page|layout)|\-pages\-internals)|main\-app)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise(function(resolve, reject) { installedChunkData = installedChunks[chunkId] = [resolve, reject]; });
 /******/ 							promises.push(installedChunkData[2] = promise);

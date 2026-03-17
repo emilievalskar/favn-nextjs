@@ -1,40 +1,51 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_styles_globals_css-node_modules_next_font_google_target_css-node_modules_next_font_go-06cadc.css",
-      "static/chunks/app/layout.js"
-    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/css-src_app_home_module_css.css",
       "static/chunks/app/page.js"
     ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/css-src_styles_globals_css-node_modules_next_font_google_target_css-node_modules_next_font_go-06cadc.css",
+      "static/chunks/app/layout.js"
+    ],
     "/behandlinger/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_s-44827d.css",
+      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
       "static/chunks/app/behandlinger/page.js"
     ],
     "/sikker-salong/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_s-44827d.css",
+      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
       "static/chunks/app/sikker-salong/page.js"
     ],
     "/kontakt/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_s-44827d.css",
+      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
       "static/chunks/app/kontakt/page.js"
     ],
     "/stillinger/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_s-44827d.css",
+      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
       "static/chunks/app/stillinger/page.js"
+    ],
+    "/om-oss/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
+      "static/chunks/app/om-oss/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

@@ -6,7 +6,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 // ─────────────────────────────────────────────
 export const translations = {
   no: {
-    nav: ['Hjem', 'Behandlinger', 'Sikker salong', 'Bestill time', 'Kontakt', 'Ledige stillinger'],
+    nav: ['Hjem', 'Behandlinger', 'Sikker salong', 'Bestill time', 'Kontakt', 'Ledige stillinger', 'Om oss'],
     bookBtn: 'Bestill time',
     footerTagline:
       'En fredfull oase midt i Oslo — hvor skjønnhet møter omsorg og faglig dyktighet.',
@@ -16,7 +16,7 @@ export const translations = {
     footerCopy: '© 2025 FAVN Neglesalong Oslo',
   },
   en: {
-    nav: ['Home', 'Treatments', 'Safe salon', 'Book appointment', 'Contact', 'Job openings'],
+    nav: ['Home', 'Treatments', 'Safe salon', 'Book appointment', 'Contact', 'Job openings', 'About us'],
     bookBtn: 'Book now',
     footerTagline:
       'A peaceful oasis in the heart of Oslo — where beauty meets care and expertise.',

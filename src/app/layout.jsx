@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="no" className={`${cormorant.variable} ${jost.variable}`}>
       <head>
         <link rel="preload" as="image" href="/images/galleri-resepsjon-hover.jpg" />
+        <link rel="preload" as="image" href="/images/galleri-resepsjon-hover2.jpg" />
         <link rel="preload" as="image" href="/images/galleri-majorstuen-hover.jpg" />
       </head>
       <body>

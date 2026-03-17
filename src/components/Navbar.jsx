@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: '/',               labelKey: 0 },
   { href: '/behandlinger',   labelKey: 1 },
   { href: '/sikker-salong',  labelKey: 2 },
-  // "Bestill time" is the CTA button, not a nav link
+  { href: '/om-oss',         labelKey: 6 },
   { href: '/kontakt',        labelKey: 4 },
   { href: '/stillinger',     labelKey: 5 },
 ];

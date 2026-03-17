@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: '/',              label: 'Hjem' },
   { href: '/behandlinger',  label: 'Behandlinger' },
   { href: '/sikker-salong', label: 'Sikker salong' },
+  { href: '/om-oss',        label: 'Om oss' },
   { href: '/bestill',       label: 'Bestill time' },
   { href: '/kontakt',       label: 'Kontakt' },
   { href: '/stillinger',    label: 'Ledige stillinger' },

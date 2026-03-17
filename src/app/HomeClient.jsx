@@ -125,8 +125,9 @@ export default function HomeClient() {
           <div className={`${styles.gp} ${styles.gpLarge}`}>
             <img src="/images/galleri-interior.jpg" alt="Interiør" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
-          <div className={styles.gp}>
-            <img src="/images/galleri-resepsjon.jpg" alt="Resepsjon" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          <div className={`${styles.gp} ${styles.gpHover}`}>
+            <img src="/images/galleri-resepsjon.jpg" alt="Resepsjon" className={styles.gpImgDefault} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/images/galleri-resepsjon-hover2.jpg" alt="Resepsjon hover" className={styles.gpImgHover} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           <div className={`${styles.gp} ${styles.gpHover}`}>
             <img src="/images/galleri-fasade.jpg" alt="Fasade" className={styles.gpImgDefault} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
