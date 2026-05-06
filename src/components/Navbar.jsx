@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { useLang } from './LangContext';
@@ -20,11 +21,18 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
+  const [isMobile, setIsMobile]   = useState(false);
 
   useEffect(() => {
     function onScroll() { setScrolled(window.scrollY > 60); }
+    function onResize() { setIsMobile(window.innerWidth <= 960); }
+    onResize();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onResize, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   // Prevent body scroll when mobile menu is open
@@ -35,10 +43,16 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={scrolled ? 'scrolled' : ''}>
+      <nav className={[scrolled ? 'scrolled' : '', isMobile ? 'mobile-nav' : ''].filter(Boolean).join(' ')}>
         <Link href="/" className="nav-logo-wrap">
-          <span className="nav-logo-word">FAVN</span>
-          <span className="nav-logo-sub">Neglesalong</span>
+          <Image
+            src={(scrolled || isMobile) ? '/images/logo-dark.png' : '/images/logo-light.png'}
+            alt="FAVN Neglesalong"
+            width={160}
+            height={56}
+            style={{ objectFit: 'contain', objectPosition: 'left center', display: 'block' }}
+            priority
+          />
         </Link>
 
         <ul className="nav-links">

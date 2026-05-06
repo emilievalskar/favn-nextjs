@@ -12,6 +12,12 @@
       "static/css/css-src_styles_globals_css-node_modules_next_font_google_target_css-node_modules_next_font_go-06cadc.css",
       "static/chunks/app/layout.js"
     ],
+    "/om-oss/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
+      "static/chunks/app/om-oss/page.js"
+    ],
     "/behandlinger/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -35,17 +41,6 @@
       "static/chunks/main-app.js",
       "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
       "static/chunks/app/stillinger/page.js"
-    ],
-    "/om-oss/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_app_o-c28b65.css",
-      "static/chunks/app/om-oss/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

@@ -46,6 +46,7 @@ export default function BestillClient() {
             src="/images/bestill.jpg"
             alt="Interiør FAVN"
             fill
+            sizes="(max-width: 960px) 0vw, 50vw"
             style={{ objectFit: 'cover' }}
           />
         </div>

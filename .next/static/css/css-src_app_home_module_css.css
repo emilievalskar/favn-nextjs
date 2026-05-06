@@ -1,6 +1,51 @@
 /*!*******************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/home.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************/
+/* ── HERO WRAP ── */
+.home_heroWrap__di6eZ {
+  background: var(--bg);
+}
+
+/* ── HERO WRAP ── */
+.home_heroWrap__di6eZ {
+  background: var(--bg);
+}
+
+/* Knapper desktop — vises alltid unntatt mobil */
+.home_introBtnsDesktop__pcAnZ {
+  margin-top: 44px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Knapper mobil — skjult på desktop */
+.home_introBtnsMobile__zDC5s {
+  display: none;
+}
+
+/* Desktop-only tatovør tittel — skjult på mobil */
+.home_tattooDesktopOnly__Ox4jI {
+  display: block;
+}
+
+/* Mobil-only tatovør header — skjult på desktop */
+.home_tattooMobileHeader__V3mMo {
+  display: none;
+}
+
+.home_tattooMobileTitle__LTPD6 {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 8vw, 52px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.08;
+}
+.home_tattooMobileTitle__LTPD6 em {
+  font-style: italic;
+  color: rgba(180,154,106,0.9);
+}
+
 /* ── HERO ── */
 .home_hero__z_jpu {
   height: 100vh;
@@ -29,8 +74,8 @@
   inset: 0;
   background:
     linear-gradient(to right,
-      rgba(0,0,0,0.45) 0%,
-      rgba(0,0,0,0.18) 45%,
+      rgba(0,0,0,0.62) 0%,
+      rgba(0,0,0,0.35) 45%,
       rgba(0,0,0,0) 70%
     ),
     linear-gradient(to bottom,
@@ -160,6 +205,10 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.home_introBtnsMobile__zDC5s {
+  display: none;
 }
 
 .home_introPhotos__tbtFA {
@@ -383,60 +432,208 @@
   margin: 0 auto;
 }
 
-.home_tGrid__TmblH {
+.home_tiLayout__CYOdg {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2px;
-  gap: 2px;
-  margin-top: 56px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+  gap: 80px;
+  align-items: center;
 }
 
-.home_tQmark__HcjX9 {
-  font-family: var(--font-serif);
-  font-size: 80px;
-  line-height: 0;
-  color: rgba(180,154,106,0.25);
-  position: absolute;
-  top: 40px;
-  left: 38px;
-}
-
-.home_tQuote__D_tFa {
-  font-family: var(--font-serif);
-  font-size: 19px;
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.75;
-  margin-top: 44px;
-}
-
-.home_tSig__n2yfO {
-  margin-top: 28px;
+/* Stacked cards */
+.home_tStack__b0W7A {
+  position: relative;
+  height: 380px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
 }
 
-.home_tDot__0Fh2z {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+.home_tStackCard__Pc4Xj {
+  position: absolute;
+  width: 360px;
+  padding: 40px 44px;
+  border-radius: 4px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.home_tStackDark__f_nzg {
+  background: #3a3d35;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.home_tStackLight__FPdYk {
+  background: var(--bg-olive);
+}
+.home_tStackLight__FPdYk .home_tQuote__D_tFa { color: var(--charcoal); }
+.home_tStackLight__FPdYk .home_tWho__gYEL1 { color: var(--mid); }
+.home_tStackLight__FPdYk .home_tStars__6b_5U { color: var(--accent); }
+.home_tStackLight__FPdYk .home_tAvatar__IkUmJ {
   background: var(--accent);
-  flex-shrink: 0;
-}
-
-.home_tWho__gYEL1 {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.38);
+  color: white;
 }
 
 .home_tStars__6b_5U {
   color: var(--accent);
+  font-size: 16px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.home_tQuote__D_tFa {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.home_tSig__n2yfO {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home_tAvatar__IkUmJ {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(180,154,106,0.3);
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.home_tWho__gYEL1 {
   font-size: 13px;
-  margin-top: 5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
+}
+
+/* Navigation */
+.home_tNav__ZPsFs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.home_tDots__z2vul {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.home_tDotBtn__te9Pf {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+.home_tDotBtn__te9Pf:hover { background: rgba(255,255,255,0.4); }
+.home_tDotActive__m8z43 {
+  background: var(--accent) !important;
+  transform: scale(1.3);
+}
+
+.home_tArrow__xKe_o {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  font-size: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+.home_tArrow__xKe_o:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── VIDEO ── */
+.home_videoSection__PAntu {
+  width: 100%;
+  height: 100vh;
+  max-height: 700px;
+  overflow: hidden;
+  position: relative;
+  background: var(--dark);
+}
+
+.home_videoOverlay__am_nv {
+  display: none;
+}
+.home_videoOverlayVisible__6Ci0q {
+  display: none;
+}
+
+.home_videoCta__pr_jW {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  z-index: 2;
+  pointer-events: none;
+}
+.home_videoCtaVisible___Yx6z {
+  pointer-events: auto;
+}
+
+.home_videoCtaCard__Rxu0N {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  padding: 52px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 620px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease 1s, transform 1s ease 1s;
+}
+
+.home_videoCtaVisible___Yx6z .home_videoCtaCard__Rxu0N {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home_videoCtaTitle__m9Fb1 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.08;
+  margin-bottom: 36px;
+}
+.home_videoCtaTitle__m9Fb1 em {
+  font-style: italic;
+  color: var(--accent);
+  text-shadow: 0 2px 12px rgba(120, 70, 60, 0.7), 0 0 24px rgba(100, 50, 40, 0.5);
 }
 
 /* ── CTA SECTION ── */
@@ -481,75 +678,192 @@
   flex-wrap: wrap;
 }
 
-/* ── RESPONSIVE ── */
+.home_heroBtn__Gk3fN { /* ingen endring på desktop */ }
+
+/* ── RESPONSIVE: nettbrett ── */
 @media (max-width: 960px) {
+  /* Hero */
   .home_hero__z_jpu { min-height: 90vh; }
   .home_heroContent__f1Kuk { padding: 120px 28px 60px 28px; max-width: 100%; }
   .home_heroOverlay__BHAs_ {
-    background:
-      linear-gradient(to bottom,
-        rgba(0,0,0,0.55) 0%,
-        rgba(0,0,0,0.35) 35%,
-        rgba(0,0,0,0.5) 100%
-      );
+    background: linear-gradient(to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.35) 35%,
+      rgba(0,0,0,0.5) 100%
+    );
   }
-  .home_heroEyebrow__AWM16 {
-    color: rgba(255,255,255,0.85);
-    text-shadow: 0 1px 10px rgba(0,0,0,0.6);
-  }
+  .home_heroEyebrow__AWM16 { color: rgba(255,255,255,0.85); text-shadow: 0 1px 10px rgba(0,0,0,0.6); }
 
+  /* Tagline */
   .home_taglineStrip__PJwIV { padding: 0 28px; flex-wrap: wrap; }
+  .home_tsItem__an7iG { flex: 1 1 45%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .home_tsItem__an7iG:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06); }
+  .home_tsItem__an7iG:last-child { border-bottom: none; }
 
+  /* Intro */
   .home_intro__rmXoA { padding: 80px 28px; }
-  .home_introLayout__sP47_ { grid-template-columns: 1fr; gap: 52px; }
+  .home_introLayout__sP47_ { grid-template-columns: 1fr; gap: 48px; }
   .home_introPhotos__tbtFA { height: 320px; }
 
-  .home_mobileGalleryHeader__AzmFg {
-    display: block;
-    padding: 48px 28px 24px;
-    background: var(--bg-olive);
-  }
-
-  .home_galleryStrip__2N_MW {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
+  /* Gallery */
+  .home_mobileGalleryHeader__AzmFg { display: block; padding: 48px 28px 24px; background: var(--bg-olive); }
+  .home_galleryStrip__2N_MW { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .home_gpLarge__NUWWi { grid-column: span 2; grid-row: span 1; height: 280px; }
-  .home_gp__Z8RkF { height: 220px; }
-  .home_galleryFooter__g_N_R { padding: 28px; }
+  .home_gp__Z8RkF { height: 200px; }
+  .home_galleryFooter__g_N_R { padding: 28px; flex-direction: column; align-items: flex-start; gap: 16px; }
 
+  /* Treatments */
   .home_treatments__fG_HQ { padding: 80px 28px; }
+  .home_treatmentsHead__kJdQh { flex-direction: column; align-items: flex-start; gap: 20px; }
   .home_treatmentsList__vjv29 {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 2px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    margin: 0 -28px;
-    padding: 0 28px;
+    display: flex; flex-direction: row; overflow-x: auto;
+    scroll-snap-type: x mandatory; gap: 2px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    margin: 0 -28px; padding: 0 28px;
   }
   .home_treatmentsList__vjv29::-webkit-scrollbar { display: none; }
 
+  /* Tattoo */
   .home_tattoo__FBT4H { padding: 80px 28px; }
   .home_tattooLayout__he55S { grid-template-columns: 1fr; gap: 48px; }
   .home_tattooPortrait__liL6f { height: 380px; }
   .home_tattooGrid__htSAW { grid-template-columns: repeat(3, 1fr); }
 
+  /* Testimonials */
   .home_testimonials__5u0nT { padding: 80px 28px; }
-  .home_tGrid__TmblH {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 2px;
-    margin: 56px -28px 0;
-    padding: 0 28px;
-  }
-  .home_tGrid__TmblH::-webkit-scrollbar { display: none; }
+  .home_tiLayout__CYOdg { grid-template-columns: 1fr; gap: 52px; }
+  .home_tStack__b0W7A { height: 320px; }
+  .home_tStackCard__Pc4Xj { width: 280px; padding: 32px 36px; }
 
+  /* Video */
+  .home_videoSection__PAntu { max-height: 500px; }
+  .home_videoCtaCard__Rxu0N { padding: 40px 36px; }
+
+  /* CTA */
+  .home_ctaSection__cUAAD { height: 420px; }
   .home_ctaInner__5PGyg { padding: 0 36px; }
+}
+
+/* ── RESPONSIVE: mobil ── */
+@media (max-width: 480px) {
+  /* Hero wrap */
+  .home_heroWrap__di6eZ { background: #2A2B25; border-radius: 0 0 36px 36px; overflow: hidden; }
+  .home_hero__z_jpu { min-height: 100svh; }
+  .home_heroContent__f1Kuk {
+    padding: 0 28px 52px 28px;
+    justify-content: flex-end;
+    max-width: 100%;
+  }
+  .home_heroOverlay__BHAs_ {
+    display: block;
+    background: linear-gradient(to bottom,
+      rgba(0,0,0,0) 30%,
+      rgba(20,20,18,0.55) 60%,
+      rgba(20,20,18,0.82) 100%
+    );
+  }
+  .home_heroCta__q633O a { padding: 16px 36px !important; }
+  .home_heroBtn__Gk3fN {
+    background: rgba(255,255,255,0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.35) !important;
+    color: white !important;
+    border-radius: 100px !important;
+    padding: 14px 36px !important;
+  }
+
+  /* Tagline — 2×2 grid */
+  .home_taglineStrip__PJwIV { padding: 0; display: grid; grid-template-columns: 1fr 1fr; margin-top: -36px; padding-top: 36px; }
+  .home_tsItem__an7iG { flex: unset; padding: 20px 16px; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
+  .home_tsItem__an7iG:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.06) !important; }
+  .home_tsItem__an7iG:nth-child(3), .home_tsItem__an7iG:nth-child(4) { border-bottom: none !important; }
+
+  /* Intro */
+  .home_intro__rmXoA { padding: 60px 28px 0 !important; border-radius: 48px 48px 0 0; }
+  .home_introLayout__sP47_ {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0;
+  }
+  .home_introLayout__sP47_ > .home_reveal__uTaB4 { margin-bottom: 32px; }
+  .home_introBtnsMobile__zDC5s { order: 2; }
+  .home_introPhotos__tbtFA { order: 3; }
+  .home_introPhotos__tbtFA {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 280px 160px;
+    grid-gap: 0;
+    gap: 0;
+    margin-left: -28px;
+    margin-right: 40px;
+    position: relative;
+  }
+  .home_ip1__ZzAyQ { position: relative; width: auto; height: auto; top: auto; right: auto; grid-column: 1 / 3; grid-row: 1; overflow: hidden; border-radius: 0 24px 0 0; }
+  .home_ip2__M4eYu { position: relative; width: auto; height: auto; bottom: auto; left: auto; grid-column: 1; grid-row: 2; overflow: hidden; }
+  .home_ip3__SjbzP { position: relative; width: auto; height: auto; bottom: auto; right: auto; border: none; grid-column: 2; grid-row: 2; overflow: hidden; }
+  .home_brassBadge__DBcMU { display: none; }
+  .home_introBtns__BeWzF { display: none; }
+  .home_introBtnsMobile__zDC5s {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    grid-column: 1 / -1;
+    margin-bottom: -22px;
+    padding-top: 8px;
+  }
+  .home_introBtnsMobile__zDC5s a {
+    border-radius: 100px !important;
+    padding: 12px 28px !important;
+    min-width: 180px;
+    text-align: center;
+  }
+
+  /* Gallery */
+  .home_mobileGalleryHeader__AzmFg { padding: 40px 20px 20px; }
+  .home_galleryStrip__2N_MW { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; gap: 3px; }
+  .home_gpLarge__NUWWi { display: none !important; }
+  .home_gp__Z8RkF { height: auto; }
+  .home_galleryFooter__g_N_R { padding: 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+
+  /* Treatments */
+  .home_treatments__fG_HQ { padding: 60px 20px; }
+  .home_treatmentsList__vjv29 { gap: 12px; padding: 0 20px 16px; margin: 0 -20px; }
+
+  /* Tattoo */
+  .home_tattoo__FBT4H { padding: 60px 20px; }
+  .home_tattooLayout__he55S { grid-template-columns: 1fr; gap: 48px; }
+  .home_tattooPortrait__liL6f { height: 380px; }
+  .home_tattooPortrait__liL6f img { object-position: center 60% !important; }
+  .home_tattooDesktopOnly__Ox4jI { display: none !important; }
+  .home_tattooMobileHeader__V3mMo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    inset: 0;
+    padding: 32px 28px;
+    background: linear-gradient(to bottom, rgba(20,20,18,0.15) 0%, transparent 30%, rgba(20,20,18,0.85) 100%);
+    z-index: 2;
+  }
+  .home_tattooGrid__htSAW { grid-template-columns: repeat(3, 1fr); }
+
+  /* Testimonials */
+  .home_testimonials__5u0nT { padding: 60px 20px 100px; }
+  .home_tStack__b0W7A { height: 300px; }
+  .home_tStackCard__Pc4Xj { width: calc(100vw - 80px); padding: 28px; }
+
+  /* Video */
+  .home_videoSection__PAntu { max-height: 420px; }
+  .home_videoCtaCard__Rxu0N { padding: 32px 24px; max-width: 100%; border-radius: 16px; }
+  .home_ctaBtns__NQ_zc { flex-direction: column; align-items: center; }
+  .home_ctaBtns__NQ_zc a { text-align: center; width: auto !important; min-width: 200px; border-radius: 100px !important; padding: 13px 32px !important; }
+
+  /* CTA */
+  .home_ctaSection__cUAAD { height: 360px; }
+  .home_ctaInner__5PGyg { padding: 0 20px; }
 }

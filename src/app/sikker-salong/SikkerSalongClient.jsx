@@ -124,7 +124,7 @@ export default function SikkerSalongClient() {
       </section>
 
       <div className={styles.safetyCta}>
-        <Image src="/images/sikker-salong-cta.jpg" alt="FAVN Neglesalong" fill style={{ objectFit: 'cover', objectPosition: 'center 45%' }} />
+        <Image src="/images/sikker-salong-produkter.jpg" alt="FAVN Neglesalong" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 45%' }} />
         <div className={styles.safetyCtaInner}>
           <div className="reveal">
             <p className={styles.eyebrowOverride}>{lang === 'en' ? 'Ready for a safe treatment?' : 'Klar for en sikker behandling?'}</p>

@@ -86,7 +86,7 @@ export default function BehandlingerClient() {
                       ))}
                     </div>
                   )}
-                  <a href={BOOK_URL} target="_blank" rel="noreferrer" className="btn-dark">
+                  <a href={cat.bookUrl || BOOK_URL} target="_blank" rel="noreferrer" className="btn-dark">
                     {t(cat.bookLabel, lang)}
                   </a>
                 </div>

@@ -53,6 +53,298 @@
     padding: 0 28px 44px;
   }
 }
+
+@media (max-width: 480px) {
+  .PhotoPageHeader_inner__Feada {
+    padding: 0 20px 36px;
+  }
+  .PhotoPageHeader_inner__Feada h1 {
+    font-size: clamp(34px, 9vw, 52px);
+  }
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/om-oss/om-oss.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/* ── VIDEO ── */
+.om-oss_videoCtaCard__cIDLo { /* ingen endring på desktop */ }
+.om-oss_videoBtn___IwYR { /* ingen endring på desktop */ }
+.om-oss_videoWrap__NWuGp { /* ingen endring på desktop */ }
+
+/* ── HERO OVERLAY ── */
+.om-oss_heroWrap__dLiKc {
+  position: relative;
+}
+
+.om-oss_heroOverlay__YAHIm {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right,
+      rgba(20,20,18,0.55) 0%,
+      rgba(20,20,18,0.25) 50%,
+      rgba(20,20,18,0) 75%
+    ),
+    linear-gradient(to bottom,
+      rgba(20,20,18,0.4) 0%,
+      rgba(20,20,18,0) 40%,
+      rgba(20,20,18,0) 100%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── INTRO ── */
+.om-oss_intro__iLUIc {
+  background: var(--bg);
+  padding: 120px 64px;
+}
+
+.om-oss_introLayout__QSMwB {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+  gap: 80px;
+  align-items: center;
+}
+
+.om-oss_introP__Z3U66 {
+  font-size: 16px;
+  color: var(--mid);
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.om-oss_introImage__ibx28 {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+}
+
+/* ── LOKASJONER ── */
+.om-oss_locations__3gRFQ {
+  background: var(--bg-grey);
+  padding: 110px 64px;
+}
+
+.om-oss_locGrid__QFJ4G {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.om-oss_locCard__I_th6 {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.om-oss_locImg__FfgBJ {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.om-oss_locInfo__bJa5e {
+  padding: 36px 40px 44px;
+}
+
+.om-oss_locNum__XqwnV {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--taupe);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+
+.om-oss_locName__8UTs_ {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+
+.om-oss_locAddr__v3_a9 {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+/* ── BUE-SLIDER ── */
+.om-oss_archSection__sBzSl {
+  background: var(--bg-grey);
+  padding: 110px 64px;
+  text-align: center;
+}
+
+.om-oss_archSection__sBzSl .om-oss_divider__Ry225,
+.om-oss_archSection__sBzSl .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.om-oss_archRow__VhXqf {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+
+.om-oss_archWrap__kLwKB {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.om-oss_archFrame__Xl7sS {
+  width: 360px;
+  height: 480px;
+  border-radius: 180px 180px 0 0;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-olive);
+}
+
+.om-oss_archImg___n1oG,
+.om-oss_archImgActive__TED7E {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.9s ease;
+}
+.om-oss_archImg___n1oG { opacity: 0; }
+.om-oss_archImgActive__TED7E { opacity: 1; }
+
+.om-oss_archDots__NAIxM {
+  display: flex;
+  gap: 8px;
+}
+
+.om-oss_archDot__k20Sb,
+.om-oss_archDotActive__1V1QW {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+.om-oss_archDot__k20Sb { background: var(--border); }
+.om-oss_archDotActive__1V1QW { background: var(--accent); transform: scale(1.3); }
+
+.om-oss_archLabel__WIBCj {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--charcoal);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.om-oss_archAddr__74W72 {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin: 0;
+}
+
+/* ── CTA ── */
+.om-oss_ctaSection__pakLM {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+}
+.om-oss_ctaSection__pakLM::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(30,30,26,0.88) 0%, rgba(30,30,26,0.55) 60%, rgba(30,30,26,0.2) 100%);
+}
+
+.om-oss_ctaInner__WfGcM {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+}
+
+.om-oss_ctaTitle__cz_9Z {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.5vw, 64px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.08;
+  margin-bottom: 36px;
+}
+.om-oss_ctaTitle__cz_9Z em {
+  font-style: italic;
+  color: rgba(180,154,106,0.9);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .om-oss_intro__iLUIc { padding: 80px 28px; }
+  .om-oss_introLayout__QSMwB { grid-template-columns: 1fr; gap: 48px; }
+  .om-oss_introImage__ibx28 { height: 360px; }
+
+  .om-oss_locations__3gRFQ { padding: 80px 28px; }
+  .om-oss_locGrid__QFJ4G { grid-template-columns: 1fr 1fr; }
+
+  .om-oss_archSection__sBzSl { padding: 80px 28px; }
+  .om-oss_archRow__VhXqf { gap: 48px; }
+  .om-oss_archFrame__Xl7sS { width: 240px; height: 320px; border-radius: 120px 120px 0 0; }
+
+  .om-oss_ctaInner__WfGcM { padding: 0 36px; }
+  .om-oss_ctaSection__pakLM { height: 380px; }
+}
+
+@media (max-width: 480px) {
+  .om-oss_intro__iLUIc { padding: 60px 20px; }
+  .om-oss_introImage__ibx28 { display: none; }
+
+  .om-oss_videoCtaCard__cIDLo {
+    padding: 32px 24px !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+    max-height: unset !important;
+  }
+  .om-oss_videoWrap__NWuGp { max-height: 420px !important; }
+  .om-oss_videoBtns__plq1h { flex-direction: column !important; align-items: center !important; }
+  .om-oss_videoBtn___IwYR {
+    text-align: center;
+    width: auto !important;
+    min-width: 200px;
+    border-radius: 100px !important;
+    padding: 13px 32px !important;
+  }
+
+  .om-oss_locations__3gRFQ { padding: 60px 20px; }
+  .om-oss_locGrid__QFJ4G { grid-template-columns: 1fr; }
+  .om-oss_locImg__FfgBJ { height: 220px; }
+  .om-oss_locInfo__bJa5e { padding: 24px 24px 32px; }
+
+  .om-oss_archSection__sBzSl { padding: 60px 20px; }
+  .om-oss_archRow__VhXqf { gap: 16px; }
+  .om-oss_archFrame__Xl7sS { width: 160px; height: 220px; border-radius: 80px 80px 0 0; }
+  .om-oss_archLabel__WIBCj { font-size: 18px; }
+
+  .om-oss_ctaSection__pakLM { height: 320px; }
+  .om-oss_ctaInner__WfGcM { padding: 0 20px; }
+}
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/behandlinger/behandlinger.module.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************/
@@ -272,6 +564,16 @@
   .behandlinger_gavekort__8nKPq { padding: 64px 28px; }
   .behandlinger_gkInner__wtAxU { grid-template-columns: 1fr; gap: 40px; }
 }
+
+@media (max-width: 480px) {
+  .behandlinger_main__FW7z2 { padding: 48px 20px; }
+  .behandlinger_accTrigger__kL_l8 { padding: 22px 0; }
+  .behandlinger_accTitle__6WZyL { font-size: 20px; }
+  .behandlinger_accBody__JOdSQ { padding-bottom: 28px; }
+  .behandlinger_tEntry__H6Twl { grid-template-columns: 1fr; gap: 8px; }
+  .behandlinger_tEntryRight__WEbXt { text-align: left; }
+  .behandlinger_gavekort__8nKPq { padding: 60px 20px; }
+}
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/sikker-salong/sikker-salong.module.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************/
@@ -343,8 +645,20 @@
 
 /* ── PRODUCTS ── */
 .sikker-salong_productsSection__W3_97 {
-  background: var(--bg-grey);
+  background: #2A2B25;
   padding: 110px 64px;
+}
+
+.sikker-salong_productsSection__W3_97 .eyebrow-label {
+  color: rgba(255,255,255,0.3);
+}
+
+.sikker-salong_productsSection__W3_97 .section-title {
+  color: white;
+}
+
+.sikker-salong_productsSection__W3_97 .divider {
+  background: rgba(255,255,255,0.15);
 }
 
 .sikker-salong_productsGrid__Pj3YI {
@@ -357,7 +671,8 @@
 }
 
 .sikker-salong_prodCard__9MnCO {
-  background: var(--bg);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 44px 36px;
   border-top: 2px solid var(--accent);
 }
@@ -366,10 +681,11 @@
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 12px;
+  color: white;
 }
 .sikker-salong_prodCard__9MnCO p {
   font-size: 14px;
-  color: var(--mid);
+  color: rgba(255,255,255,0.48);
   line-height: 1.75;
 }
 
@@ -383,7 +699,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(42,42,40,.4);
+  background: rgba(42,43,37,0.55);
 }
 
 .sikker-salong_safetyCtaInner__joUUE {
@@ -425,9 +741,20 @@
 @media (max-width: 960px) {
   .sikker-salong_safetyText__mm1Pz { padding: 80px 28px; }
   .sikker-salong_safetyGrid__QF4Rr { grid-template-columns: 1fr; gap: 52px; }
-  .sikker-salong_stRight__FBs5M { grid-template-columns: 1fr; }
+  .sikker-salong_stRight__FBs5M { grid-template-columns: 1fr 1fr; }
   .sikker-salong_productsSection__W3_97 { padding: 80px 28px; }
   .sikker-salong_productsGrid__Pj3YI { grid-template-columns: 1fr; }
+  .sikker-salong_safetyCta__e164q { height: 320px; }
+}
+
+@media (max-width: 480px) {
+  .sikker-salong_safetyText__mm1Pz { padding: 60px 20px; }
+  .sikker-salong_stRight__FBs5M { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .sikker-salong_promiseCard__3vYuI { padding: 28px 20px; }
+  .sikker-salong_pcNum__XYxAr { font-size: 32px; margin-bottom: 12px; }
+  .sikker-salong_productsSection__W3_97 { padding: 60px 20px; }
+  .sikker-salong_safetyCta__e164q { height: 280px; }
+  .sikker-salong_safetyCtaInner__joUUE { padding: 0 24px; }
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/kontakt/kontakt.module.css ***!
@@ -495,6 +822,11 @@
 .kontakt_hr__VS4xy span:first-child { color: var(--mid); }
 
 /* ── FORM ── */
+.kontakt_cfWrap__zDS2X {
+  background: var(--bg-grey);
+  padding: 48px 52px;
+}
+
 .kontakt_cfWrap__zDS2X h3 {
   font-family: var(--font-serif);
   font-size: 32px;
@@ -610,9 +942,33 @@
   width: 100%;
 }
 
+/* ── OPENING HOURS SECTION ── */
+.kontakt_hoursSection__e1R_c {
+  margin-top: 48px;
+  padding: 44px 52px;
+  background: var(--bg);
+  border-top: 2px solid var(--accent);
+  max-width: 560px;
+}
+
+.kontakt_hoursTitle__E4Ozf {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 20px;
+}
+
+.kontakt_hoursGrid__3GSx6 {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
 @media (max-width: 960px) {
   .kontakt_contactMain___P76Y { padding: 80px 28px; }
   .kontakt_contactLayout__AeQfG { grid-template-columns: 1fr; gap: 60px; }
+  .kontakt_cfWrap__zDS2X { padding: 36px 32px; }
   .kontakt_mapSection__567jI { padding: 72px 28px; }
   .kontakt_mapGrid__4xEN8 {
     display: flex;
@@ -633,6 +989,16 @@
     flex-shrink: 0;
   }
   .kontakt_fgRow__BGSrr { grid-template-columns: 1fr; }
+  .kontakt_hoursSection__e1R_c { padding: 36px 28px; }
+}
+
+@media (max-width: 480px) {
+  .kontakt_contactMain___P76Y { padding: 60px 20px; }
+  .kontakt_cfWrap__zDS2X { padding: 28px 20px; }
+  .kontakt_mapSection__567jI { padding: 60px 20px; }
+  .kontakt_mapGrid__4xEN8 { margin: 40px -20px 0; padding: 0 20px; }
+  .kontakt_mapCard__NtJgO { min-width: 260px; max-width: 260px; padding: 36px 28px; }
+  .kontakt_hoursSection__e1R_c { padding: 28px 20px; max-width: 100%; }
 }
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/stillinger/stillinger.module.css ***!
@@ -807,154 +1173,13 @@
   .stillinger_jobLayout__wG3j3 { grid-template-columns: 1fr; gap: 60px; }
   .stillinger_jobAside__yp6hC { position: static; }
   .stillinger_culture__WMP_R { padding: 80px 28px; }
+  .stillinger_cultureGrid__MbuQc { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .stillinger_contactCta__EwJN5 { padding: 40px 32px; }
+}
+
+@media (max-width: 480px) {
+  .stillinger_jobMain__s34ZD { padding: 60px 20px; }
+  .stillinger_culture__WMP_R { padding: 60px 20px; }
   .stillinger_cultureGrid__MbuQc { grid-template-columns: 1fr; }
-}
-
-/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/om-oss/om-oss.module.css ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************/
-/* ── INTRO ── */
-.om-oss_intro__iLUIc {
-  background: var(--bg);
-  padding: 120px 64px;
-}
-
-.om-oss_introLayout__QSMwB {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 80px;
-  gap: 80px;
-  align-items: center;
-}
-
-.om-oss_introP__Z3U66 {
-  font-size: 16px;
-  color: var(--mid);
-  line-height: 1.9;
-  margin-bottom: 18px;
-}
-
-.om-oss_introImage__ibx28 {
-  position: relative;
-  height: 560px;
-  overflow: hidden;
-}
-
-/* ── TEAM ── */
-.om-oss_team__2ER9r {
-  background: var(--bg-grey);
-  padding: 110px 64px;
-}
-
-.om-oss_teamGrid___7uUj {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2px;
-  gap: 2px;
-  margin-top: 56px;
-}
-
-.om-oss_memberCard__aSHW3 {
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-}
-
-.om-oss_memberImage__Frm1Y {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  background: var(--bg-olive);
-}
-
-/* placeholder when no image */
-.om-oss_memberImage__Frm1Y::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--bg-olive);
-}
-
-.om-oss_memberInfo__pUJLq {
-  padding: 28px 28px 32px;
-}
-
-.om-oss_memberRole__I_vst {
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-
-.om-oss_memberName__h7kgM {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 300;
-  color: var(--charcoal);
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.om-oss_memberBio__Akudv {
-  font-size: 13px;
-  color: var(--mid);
-  line-height: 1.75;
-}
-
-/* ── CTA ── */
-.om-oss_ctaSection__pakLM {
-  position: relative;
-  height: 480px;
-  overflow: hidden;
-}
-.om-oss_ctaSection__pakLM::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(30,30,26,0.88) 0%, rgba(30,30,26,0.55) 60%, rgba(30,30,26,0.2) 100%);
-}
-
-.om-oss_ctaInner__WfGcM {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 100px;
-}
-
-.om-oss_ctaTitle__cz_9Z {
-  font-family: var(--font-serif);
-  font-size: clamp(36px, 4.5vw, 64px);
-  font-weight: 300;
-  color: white;
-  line-height: 1.08;
-  margin-bottom: 36px;
-}
-.om-oss_ctaTitle__cz_9Z em {
-  font-style: italic;
-  color: rgba(180,154,106,0.9);
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
-  .om-oss_intro__iLUIc { padding: 80px 28px; }
-  .om-oss_introLayout__QSMwB { grid-template-columns: 1fr; gap: 48px; }
-  .om-oss_introImage__ibx28 { height: 360px; }
-
-  .om-oss_team__2ER9r { padding: 80px 28px; }
-  .om-oss_teamGrid___7uUj {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .om-oss_ctaInner__WfGcM { padding: 0 36px; }
-}
-
-@media (max-width: 600px) {
-  .om-oss_teamGrid___7uUj { grid-template-columns: 1fr; }
+  .stillinger_contactCta__EwJN5 { padding: 32px 24px; }
 }

@@ -71,16 +71,6 @@ export default function KontaktClient() {
               </div>
             </div>
 
-            <div className={styles.hoursBox}>
-              <h4>{lang === 'en' ? 'Opening hours' : 'Åpningstider'}</h4>
-              {openingHours.map((row, i) => (
-                <div key={i} className={styles.hr}>
-                  <span>{t(row.day, lang)}</span>
-                  <span>{row.time}</span>
-                </div>
-              ))}
-            </div>
-
             <div style={{ marginTop: 36 }}>
               <a href={BOOK_URL} target="_blank" rel="noreferrer" className="btn-dark">
                 {lang === 'en' ? 'Book online' : 'Bestill time online'}
@@ -165,10 +155,23 @@ export default function KontaktClient() {
                   {lang === 'en' ? 'Open in Google Maps' : 'Åpne i Google Maps'}
                 </a>
                 <div className={styles.mapImg}>
-                  <Image src={loc.image} alt={loc.name} fill style={{ objectFit: 'cover' }} />
+                  <Image src={loc.image} alt={loc.name} fill sizes="(max-width: 960px) 100vw, 50vw" style={{ objectFit: 'cover', objectPosition: loc.id === 'aker-brygge' ? 'center 70%' : 'center center' }} />
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* ── OPENING HOURS ── */}
+          <div className={`${styles.hoursSection} reveal`}>
+            <h4 className={styles.hoursTitle}>{lang === 'en' ? 'Opening hours' : 'Åpningstider'}</h4>
+            <div className={styles.hoursGrid}>
+              {openingHours.map((row, i) => (
+                <div key={i} className={styles.hr}>
+                  <span>{t(row.day, lang)}</span>
+                  <span>{row.time}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

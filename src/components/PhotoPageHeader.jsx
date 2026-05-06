@@ -30,6 +30,7 @@ export default function PhotoPageHeader({
           alt={imageAlt || ''}
           fill
           priority
+          sizes="100vw"
           style={{ objectFit: 'cover', objectPosition: objectPos }}
         />
       )}

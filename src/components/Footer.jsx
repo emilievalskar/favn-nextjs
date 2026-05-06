@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLang } from './LangContext';
 
 const NAV_LINKS = [
@@ -19,8 +20,15 @@ export default function Footer() {
     <footer>
       <div className="footer-top">
         <div className="footer-brand">
-          <Link href="/" className="footer-brand-logo">FAVN</Link>
-          <span className="footer-brand-sub">Neglesalong</span>
+          <Link href="/" style={{ display: 'inline-block', marginBottom: 20 }}>
+            <Image
+              src="/images/logo-footer.png"
+              alt="FAVN Neglesalong"
+              width={320}
+              height={108}
+              style={{ objectFit: 'contain', objectPosition: 'left center', display: 'block' }}
+            />
+          </Link>
           <p>{t.footerTagline}</p>
         </div>
 

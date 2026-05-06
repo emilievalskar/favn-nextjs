@@ -60,6 +60,11 @@
 .hr span:first-child { color: var(--mid); }
 
 /* ── FORM ── */
+.cfWrap {
+  background: var(--bg-grey);
+  padding: 48px 52px;
+}
+
 .cfWrap h3 {
   font-family: var(--font-serif);
   font-size: 32px;
@@ -173,9 +178,33 @@
   width: 100%;
 }
 
+/* ── OPENING HOURS SECTION ── */
+.hoursSection {
+  margin-top: 48px;
+  padding: 44px 52px;
+  background: var(--bg);
+  border-top: 2px solid var(--accent);
+  max-width: 560px;
+}
+
+.hoursTitle {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 20px;
+}
+
+.hoursGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
 @media (max-width: 960px) {
   .contactMain { padding: 80px 28px; }
   .contactLayout { grid-template-columns: 1fr; gap: 60px; }
+  .cfWrap { padding: 36px 32px; }
   .mapSection { padding: 72px 28px; }
   .mapGrid {
     display: flex;
@@ -196,4 +225,14 @@
     flex-shrink: 0;
   }
   .fgRow { grid-template-columns: 1fr; }
+  .hoursSection { padding: 36px 28px; }
+}
+
+@media (max-width: 480px) {
+  .contactMain { padding: 60px 20px; }
+  .cfWrap { padding: 28px 20px; }
+  .mapSection { padding: 60px 20px; }
+  .mapGrid { margin: 40px -20px 0; padding: 0 20px; }
+  .mapCard { min-width: 260px; max-width: 260px; padding: 36px 28px; }
+  .hoursSection { padding: 28px 20px; max-width: 100%; }
 }

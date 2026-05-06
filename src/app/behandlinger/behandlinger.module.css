@@ -212,3 +212,13 @@
   .gavekort { padding: 64px 28px; }
   .gkInner { grid-template-columns: 1fr; gap: 40px; }
 }
+
+@media (max-width: 480px) {
+  .main { padding: 48px 20px; }
+  .accTrigger { padding: 22px 0; }
+  .accTitle { font-size: 20px; }
+  .accBody { padding-bottom: 28px; }
+  .tEntry { grid-template-columns: 1fr; gap: 8px; }
+  .tEntryRight { text-align: left; }
+  .gavekort { padding: 60px 20px; }
+}

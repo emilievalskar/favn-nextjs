@@ -165,5 +165,13 @@
   .jobLayout { grid-template-columns: 1fr; gap: 60px; }
   .jobAside { position: static; }
   .culture { padding: 80px 28px; }
+  .cultureGrid { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .contactCta { padding: 40px 32px; }
+}
+
+@media (max-width: 480px) {
+  .jobMain { padding: 60px 20px; }
+  .culture { padding: 60px 20px; }
   .cultureGrid { grid-template-columns: 1fr; }
+  .contactCta { padding: 32px 24px; }
 }
