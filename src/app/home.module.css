@@ -671,6 +671,9 @@
 
 .heroBtn { /* ingen endring på desktop */ }
 
+.heroImgDesktop { display: block; }
+.heroImgMobile  { display: none; }
+
 /* ── RESPONSIVE: nettbrett ── */
 @media (max-width: 960px) {
   /* Hero */
@@ -740,6 +743,8 @@
   /* Hero wrap */
   .heroWrap { background: #2A2B25; border-radius: 0 0 36px 36px; overflow: hidden; }
   .hero { min-height: 100svh; }
+  .heroImgDesktop { display: none; }
+  .heroImgMobile  { display: block; }
   .heroContent {
     padding: 0 28px 52px 28px;
     justify-content: flex-end;

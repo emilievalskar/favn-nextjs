@@ -41,7 +41,16 @@ export default function HomeClient() {
             priority
             sizes="100vw"
             style={{ objectFit: 'cover', objectPosition: 'center' }}
-            className={styles.heroImg}
+            className={`${styles.heroImg} ${styles.heroImgDesktop}`}
+          />
+          <Image
+            src="/images/mobil-hero.jpg"
+            alt="FAVN Neglesalong"
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            className={`${styles.heroImg} ${styles.heroImgMobile}`}
           />
         </div>
         <div className={styles.heroOverlay} />

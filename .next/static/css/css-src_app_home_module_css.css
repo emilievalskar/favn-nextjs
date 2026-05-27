@@ -680,6 +680,9 @@
 
 .home_heroBtn__Gk3fN { /* ingen endring på desktop */ }
 
+.home_heroImgDesktop__qmtm7 { display: block; }
+.home_heroImgMobile__rH38g  { display: none; }
+
 /* ── RESPONSIVE: nettbrett ── */
 @media (max-width: 960px) {
   /* Hero */
@@ -749,6 +752,8 @@
   /* Hero wrap */
   .home_heroWrap__di6eZ { background: #2A2B25; border-radius: 0 0 36px 36px; overflow: hidden; }
   .home_hero__z_jpu { min-height: 100svh; }
+  .home_heroImgDesktop__qmtm7 { display: none; }
+  .home_heroImgMobile__rH38g  { display: block; }
   .home_heroContent__f1Kuk {
     padding: 0 28px 52px 28px;
     justify-content: flex-end;
