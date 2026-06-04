@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { useLang } from '../../components/LangContext';
 import useReveal from '../../components/useReveal';
 import PhotoPageHeader from '../../components/PhotoPageHeader';
@@ -18,19 +19,18 @@ export default function KontaktClient() {
   async function handleSubmit(e) {
     e.preventDefault();
     setError(false);
-    const formData = new FormData(e.target);
-    formData.append('access_key', '0564af03-7a11-47b6-8a94-ffb11fd2c4f2');
-    formData.append('subject', 'Ny kontakthenvendelse — FAVN');
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData,
-    });
-    const data = await res.json();
-    if (data.success) {
+    const form = e.target;
+    try {
+      await emailjs.sendForm(
+        'service_2jx575s',
+        'wh99g8f',
+        form,
+        'kuhdcUJKGTGHm6cAG'
+      );
       setSubmitted(true);
-      e.target.reset();
+      form.reset();
       setTimeout(() => setSubmitted(false), 5000);
-    } else {
+    } catch {
       setError(true);
     }
   }
