@@ -1,7 +1,7 @@
 {
   "/stillinger/page": "app/stillinger/page.js",
-  "/kontakt/page": "app/kontakt/page.js",
-  "/om-oss/page": "app/om-oss/page.js",
   "/page": "app/page.js",
-  "/sikker-salong/page": "app/sikker-salong/page.js"
+  "/sikker-salong/page": "app/sikker-salong/page.js",
+  "/kontakt/page": "app/kontakt/page.js",
+  "/om-oss/page": "app/om-oss/page.js"
 }

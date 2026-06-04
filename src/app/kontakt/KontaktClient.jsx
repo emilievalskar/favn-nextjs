@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useLang } from '../../components/LangContext';
 import useReveal from '../../components/useReveal';
@@ -14,21 +14,21 @@ export default function KontaktClient() {
   const { lang } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
+  const formRef = useRef(null);
   useReveal();
 
   async function handleSubmit(e) {
     e.preventDefault();
     setError(false);
-    const form = e.target;
     try {
       await emailjs.sendForm(
         'service_2jx575s',
         'wh99g8f',
-        form,
+        formRef.current,
         'kuhdcUJKGTGHm6cAG'
       );
       setSubmitted(true);
-      form.reset();
+      formRef.current.reset();
       setTimeout(() => setSubmitted(false), 5000);
     } catch {
       setError(true);
@@ -99,7 +99,7 @@ export default function KontaktClient() {
                   ? 'Questions about treatments, prices or anything else? We reply quickly.'
                   : 'Spørsmål om behandlinger, priser eller noe annet? Vi svarer raskt.'}
               </p>
-              <form className={styles.cf} onSubmit={handleSubmit}>
+              <form className={styles.cf} onSubmit={handleSubmit} ref={formRef}>
                 <div className={styles.fgRow}>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'First name' : 'Fornavn'}</label>
