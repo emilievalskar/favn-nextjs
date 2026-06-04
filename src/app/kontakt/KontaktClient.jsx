@@ -12,15 +12,27 @@ const t = (obj, lang) => (typeof obj === 'string' ? obj : obj?.[lang] ?? obj?.no
 export default function KontaktClient() {
   const { lang } = useLang();
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
   useReveal();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setError(false);
+    const formData = new FormData(e.target);
+    formData.append('access_key', '0564af03-7a11-47b6-8a94-ffb11fd2c4f2');
+    formData.append('subject', 'Ny kontakthenvendelse — FAVN');
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    });
+    const data = await res.json();
+    if (data.success) {
+      setSubmitted(true);
       e.target.reset();
-    }, 4000);
+      setTimeout(() => setSubmitted(false), 5000);
+    } else {
+      setError(true);
+    }
   }
 
   return (
@@ -91,20 +103,20 @@ export default function KontaktClient() {
                 <div className={styles.fgRow}>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'First name' : 'Fornavn'}</label>
-                    <input type="text" required placeholder={lang === 'en' ? 'Your first name' : 'Ditt fornavn'} />
+                    <input type="text" name="fornavn" required placeholder={lang === 'en' ? 'Your first name' : 'Ditt fornavn'} />
                   </div>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'Last name' : 'Etternavn'}</label>
-                    <input type="text" required placeholder={lang === 'en' ? 'Your last name' : 'Ditt etternavn'} />
+                    <input type="text" name="etternavn" required placeholder={lang === 'en' ? 'Your last name' : 'Ditt etternavn'} />
                   </div>
                 </div>
                 <div className={styles.fg}>
                   <label>E-post</label>
-                  <input type="email" required placeholder="din@epost.no" />
+                  <input type="email" name="email" required placeholder="din@epost.no" />
                 </div>
                 <div className={styles.fg}>
                   <label>{lang === 'en' ? 'Subject' : 'Emne'}</label>
-                  <select>
+                  <select name="emne">
                     <option value="">{lang === 'en' ? 'Choose subject…' : 'Velg emne…'}</option>
                     <option>{lang === 'en' ? 'Question about treatment' : 'Spørsmål om behandling'}</option>
                     <option>{lang === 'en' ? 'Prices' : 'Priser'}</option>
@@ -114,11 +126,16 @@ export default function KontaktClient() {
                 </div>
                 <div className={styles.fg}>
                   <label>{lang === 'en' ? 'Message' : 'Melding'}</label>
-                  <textarea required placeholder={lang === 'en' ? 'Write your message…' : 'Skriv din melding…'} />
+                  <textarea name="melding" required placeholder={lang === 'en' ? 'Write your message…' : 'Skriv din melding…'} />
                 </div>
                 {submitted && (
                   <div className={styles.successMsg}>
                     {lang === 'en' ? '✓ Message sent! We will get back to you shortly.' : '✓ Melding sendt! Vi svarer deg snart.'}
+                  </div>
+                )}
+                {error && (
+                  <div className={styles.successMsg} style={{ color: 'red' }}>
+                    {lang === 'en' ? 'Something went wrong. Please try again.' : 'Noe gikk galt. Prøv igjen.'}
                   </div>
                 )}
                 <button type="submit" className="btn-dark">

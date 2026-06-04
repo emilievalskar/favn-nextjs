@@ -49,15 +49,27 @@ const t = (obj, lang) => (typeof obj === 'string' ? obj : obj?.[lang] ?? obj?.no
 export default function StillingerClient() {
   const { lang } = useLang();
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
   useReveal();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setError(false);
+    const formData = new FormData(e.target);
+    formData.append('access_key', '0564af03-7a11-47b6-8a94-ffb11fd2c4f2');
+    formData.append('subject', 'Ny stillingssøknad — FAVN');
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    });
+    const data = await res.json();
+    if (data.success) {
+      setSubmitted(true);
       e.target.reset();
-    }, 4000);
+      setTimeout(() => setSubmitted(false), 5000);
+    } else {
+      setError(true);
+    }
   }
 
   return (
@@ -132,23 +144,28 @@ export default function StillingerClient() {
                 <form className={styles.af} onSubmit={handleSubmit}>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'Name' : 'Navn'}</label>
-                    <input type="text" required placeholder={lang === 'en' ? 'Your name' : 'Ditt navn'} />
+                    <input type="text" name="navn" required placeholder={lang === 'en' ? 'Your name' : 'Ditt navn'} />
                   </div>
                   <div className={styles.fg}>
                     <label>E-post</label>
-                    <input type="email" required placeholder="din@epost.no" />
+                    <input type="email" name="email" required placeholder="din@epost.no" />
                   </div>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'Phone' : 'Telefon'}</label>
-                    <input type="tel" placeholder={lang === 'en' ? 'Your phone number' : 'Ditt telefonnummer'} />
+                    <input type="tel" name="telefon" placeholder={lang === 'en' ? 'Your phone number' : 'Ditt telefonnummer'} />
                   </div>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'About you' : 'Kort om deg'}</label>
-                    <textarea required placeholder={lang === 'en' ? 'Tell us about your background…' : 'Fortell oss om din bakgrunn…'} />
+                    <textarea name="melding" required placeholder={lang === 'en' ? 'Tell us about your background…' : 'Fortell oss om din bakgrunn…'} />
                   </div>
                   {submitted && (
                     <div className={styles.successMsg}>
                       {lang === 'en' ? '✓ Application sent! We will be in touch.' : '✓ Søknaden er sendt! Vi tar kontakt.'}
+                    </div>
+                  )}
+                  {error && (
+                    <div className={styles.successMsg} style={{ color: 'red' }}>
+                      {lang === 'en' ? 'Something went wrong. Please try again.' : 'Noe gikk galt. Prøv igjen.'}
                     </div>
                   )}
                   <button type="submit" className="btn-dark">
