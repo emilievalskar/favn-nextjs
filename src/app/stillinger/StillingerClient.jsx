@@ -144,19 +144,19 @@ export default function StillingerClient() {
                 <form className={styles.af} onSubmit={handleSubmit} ref={formRef}>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'Name' : 'Navn'}</label>
-                    <input type="text" required placeholder={lang === 'en' ? 'Your name' : 'Ditt navn'} />
+                    <input type="text" name="navn" required placeholder={lang === 'en' ? 'Your name' : 'Ditt navn'} />
                   </div>
                   <div className={styles.fg}>
                     <label>E-post</label>
-                    <input type="email" required placeholder="din@epost.no" />
+                    <input type="email" name="email" required placeholder="din@epost.no" />
                   </div>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'Phone' : 'Telefon'}</label>
-                    <input type="tel" placeholder={lang === 'en' ? 'Your phone number' : 'Ditt telefonnummer'} />
+                    <input type="tel" name="telefon" placeholder={lang === 'en' ? 'Your phone number' : 'Ditt telefonnummer'} />
                   </div>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'About you' : 'Kort om deg'}</label>
-                    <textarea required placeholder={lang === 'en' ? 'Tell us about your background…' : 'Fortell oss om din bakgrunn…'} />
+                    <textarea name="melding" required placeholder={lang === 'en' ? 'Tell us about your background…' : 'Fortell oss om din bakgrunn…'} />
                   </div>
                   {submitted && (
                     <div className={styles.successMsg}>
