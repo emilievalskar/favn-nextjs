@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { useLang } from '../../components/LangContext';
 import useReveal from '../../components/useReveal';
 import PhotoPageHeader from '../../components/PhotoPageHeader';
@@ -50,24 +51,23 @@ export default function StillingerClient() {
   const { lang } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
+  const formRef = useRef(null);
   useReveal();
 
   async function handleSubmit(e) {
     e.preventDefault();
     setError(false);
-    const formData = new FormData(e.target);
-    formData.append('access_key', '0564af03-7a11-47b6-8a94-ffb11fd2c4f2');
-    formData.append('subject', 'Ny stillingssøknad — FAVN');
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData,
-    });
-    const data = await res.json();
-    if (data.success) {
+    try {
+      await emailjs.sendForm(
+        'service_2jx575s',
+        'template_9xy09iw',
+        formRef.current,
+        'kuhdcUJKGTGHm6cAG'
+      );
       setSubmitted(true);
-      e.target.reset();
+      formRef.current.reset();
       setTimeout(() => setSubmitted(false), 5000);
-    } else {
+    } catch {
       setError(true);
     }
   }
@@ -141,22 +141,22 @@ export default function StillingerClient() {
 
               <div className={styles.applyForm}>
                 <h4>{lang === 'en' ? 'Send a quick application' : 'Send en rask søknad'}</h4>
-                <form className={styles.af} onSubmit={handleSubmit}>
+                <form className={styles.af} onSubmit={handleSubmit} ref={formRef}>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'Name' : 'Navn'}</label>
-                    <input type="text" name="navn" required placeholder={lang === 'en' ? 'Your name' : 'Ditt navn'} />
+                    <input type="text" required placeholder={lang === 'en' ? 'Your name' : 'Ditt navn'} />
                   </div>
                   <div className={styles.fg}>
                     <label>E-post</label>
-                    <input type="email" name="email" required placeholder="din@epost.no" />
+                    <input type="email" required placeholder="din@epost.no" />
                   </div>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'Phone' : 'Telefon'}</label>
-                    <input type="tel" name="telefon" placeholder={lang === 'en' ? 'Your phone number' : 'Ditt telefonnummer'} />
+                    <input type="tel" placeholder={lang === 'en' ? 'Your phone number' : 'Ditt telefonnummer'} />
                   </div>
                   <div className={styles.fg}>
                     <label>{lang === 'en' ? 'About you' : 'Kort om deg'}</label>
-                    <textarea name="melding" required placeholder={lang === 'en' ? 'Tell us about your background…' : 'Fortell oss om din bakgrunn…'} />
+                    <textarea required placeholder={lang === 'en' ? 'Tell us about your background…' : 'Fortell oss om din bakgrunn…'} />
                   </div>
                   {submitted && (
                     <div className={styles.successMsg}>
