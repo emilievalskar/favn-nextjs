@@ -23,7 +23,7 @@ export default function KontaktClient() {
     try {
       await emailjs.sendForm(
         'service_2jx575s',
-        'wh99g8f',
+        'template_mo7h1fr',
         formRef.current,
         'kuhdcUJKGTGHm6cAG'
       );
