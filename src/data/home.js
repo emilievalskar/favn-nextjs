@@ -39,8 +39,8 @@ export const homeTreatments = [
     num: '04',
     title: { no: 'Kunstnegler', en: 'Nail Extensions' },
     desc: {
-      no: 'Gel, akryl og hard gel skreddersydd til dine ønsker. Negler som sitter, ser naturlige ut og tåler hverdagen.',
-      en: 'Gel, acrylic and hard gel tailored to your wishes. Nails that stay on, look natural and stand up to daily life.',
+      no: 'Gel og hard gel skreddersydd til dine ønsker. Negler som sitter, ser naturlige ut og tåler hverdagen.',
+      en: 'Gel and hard gel tailored to your wishes. Nails that stay on, look natural and stand up to daily life.',
     },
   },
   {
