@@ -1,7 +1,6 @@
 {
-  "/sikker-salong/page": "app/sikker-salong/page.js",
-  "/stillinger/page": "app/stillinger/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/kontakt/page": "app/kontakt/page.js",
-  "/om-oss/page": "app/om-oss/page.js"
+  "/behandlinger/page": "app/behandlinger/page.js",
+  "/kontakt/page": "app/kontakt/page.js"
 }
