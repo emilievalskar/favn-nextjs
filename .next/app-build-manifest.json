@@ -17,11 +17,6 @@
       "static/chunks/main-app.js",
       "static/css/css-src_app_kontakt_kontakt_module_css-src_components_PhotoPageHeader_module_css.css",
       "static/chunks/app/kontakt/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

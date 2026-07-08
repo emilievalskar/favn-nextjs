@@ -206,6 +206,50 @@ export default function KontaktClient() {
           </div>
         </div>
       </section>
+
+      {/* ── VILKÅR & BETINGELSER ── */}
+      <section className={styles.termsSection}>
+        <div className='inner'>
+          <div className='reveal'>
+            <p className='eyebrow-label'>{lang === 'en' ? 'Terms & Conditions' : 'Vilkår & betingelser'}</p>
+            <h2 className='section-title'>
+              {lang === 'en' ? <>What you<br /><em>need to know</em></> : <>Det du<br /><em>trenger å vite</em></>}
+            </h2>
+            <div className='divider' />
+          </div>
+          <div className={styles.termsGrid}>
+            <div className={"reveal"}>
+              <h4>{lang === 'en' ? '1. Cancellation Policy' : '1. Avbestilling'}</h4>
+              <p>{lang === 'en' ? 'Appointments must be cancelled or rescheduled at least 24 hours before the scheduled appointment time. Cancellations made less than 24 hours before the appointment may be charged up to 100% of the treatment price.' : 'Timen må avbestilles eller flyttes senest 24 timer før avtalt tid. Ved avbestilling mindre enn 24 timer før timen kan det belastes inntil 100% av behandlingsprisen.'}</p>
+            </div>
+            <div className={"reveal"} data-delay="0.05s">
+              <h4>{lang === 'en' ? '2. No-Shows' : '2. Uteblivelse'}</h4>
+              <p>{lang === 'en' ? 'Clients who do not show up for their appointment without notice will be charged 100% of the booked service.' : 'Kunder som uteblir uten varsel vil bli fakturert 100% av den bookede behandlingen.'}</p>
+            </div>
+            <div className={"reveal"} data-delay="0.1s">
+              <h4>{lang === 'en' ? '3. Late Arrival' : '3. Sen ankomst'}</h4>
+              <p>{lang === 'en' ? 'If you arrive late, we may need to shorten your treatment to avoid delaying the next client. The full treatment price will still apply.' : 'Ved sen ankomst kan vi bli nødt til å forkorte behandlingen for ikke å forsinke neste kunde. Full pris vil likevel gjelde.'}</p>
+            </div>
+            <div className={"reveal"} data-delay="0.15s">
+              <h4>{lang === 'en' ? '4. Health & Contraindications' : '4. Helse og kontraindikasjoner'}</h4>
+              <p>{lang === 'en' ? 'Please inform us prior to your appointment if you have any allergies, infections, nail conditions, or medical concerns that may affect your treatment.' : 'Gi oss beskjed før timen dersom du har allergier, infeksjoner, negleproblemer eller andre helsemessige forhold som kan påvirke behandlingen.'}</p>
+            </div>
+            <div className={"reveal"} data-delay="0.2s">
+              <h4>{lang === 'en' ? '5. Guarantee & Adjustments' : '5. Garanti og justeringer'}</h4>
+              <p>{lang === 'en' ? 'If you experience any issues with your treatment, please contact us within 48 hours and we will gladly assess and correct the service if necessary.' : 'Opplever du problemer med behandlingen, ta kontakt innen 48 timer så vurderer og korrigerer vi gjerne om nødvendig.'}</p>
+            </div>
+            <div className={"reveal"} data-delay="0.25s">
+              <h4>{lang === 'en' ? '6. Payment' : '6. Betaling'}</h4>
+              <p>{lang === 'en' ? 'All services must be paid in full at the end of the appointment.' : 'Alle behandlinger betales i sin helhet ved avslutning av timen.'}</p>
+            </div>
+            <div className={"reveal"} data-delay="0.3s">
+              <h4>{lang === 'en' ? '7. Right to Refuse Service' : '7. Rett til å nekte service'}</h4>
+              <p>{lang === 'en' ? 'FAVN reserves the right to refuse service if a client arrives with conditions that make the treatment unsafe or inappropriate.' : 'FAVN forbeholder seg retten til å avvise behandling dersom en kunde møter opp med tilstander som gjør behandlingen utrygg eller upassende.'}</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
+
   );
 }
