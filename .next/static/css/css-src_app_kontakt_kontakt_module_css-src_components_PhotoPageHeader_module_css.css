@@ -250,11 +250,9 @@
 
 /* ── OPENING HOURS SECTION ── */
 .kontakt_hoursSection__e1R_c {
-  margin-top: 48px;
   padding: 44px 52px;
   background: var(--bg);
   border-top: 2px solid var(--accent);
-  max-width: 560px;
 }
 
 .kontakt_hoursTitle__E4Ozf {
@@ -269,6 +267,23 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+.kontakt_hoursRow__85be0 {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  gap: 2px;
+  max-width: 1100px;
+}
+
+.kontakt_hoursNote__v7fzN {
+  font-size: 12px;
+  color: var(--taupe);
+  line-height: 1.7;
+  margin-top: 16px;
+  font-style: italic;
 }
 
 @media (max-width: 960px) {
@@ -296,6 +311,7 @@
   }
   .kontakt_fgRow__BGSrr { grid-template-columns: 1fr; }
   .kontakt_hoursSection__e1R_c { padding: 36px 28px; }
+  .kontakt_hoursRow__85be0 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

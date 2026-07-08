@@ -15,14 +15,8 @@
     "/kontakt/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_compo-e0e3f7.css",
+      "static/css/css-src_app_kontakt_kontakt_module_css-src_components_PhotoPageHeader_module_css.css",
       "static/chunks/app/kontakt/page.js"
-    ],
-    "/behandlinger/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_app_behandlinger_behandlinger_module_css-src_app_kontakt_kontakt_module_css-src_compo-e0e3f7.css",
-      "static/chunks/app/behandlinger/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

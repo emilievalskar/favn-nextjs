@@ -30,12 +30,17 @@ export const locations = [
   },
 ];
 
-export const openingHours = [
+export const openingHoursMajor = [
   { day: { no: 'Mandag – fredag', en: 'Monday – Friday' }, time: '10:00–19:00' },
-  { day: { no: 'Lørdag',         en: 'Saturday'          }, time: '10:00–19:00' },
-  { day: { no: 'Søndag',         en: 'Sunday'            }, time: '14:00–18:00' },
-  { day: { no: 'Lille julaften', en: 'Christmas Eve eve' }, time: '10:00–18:00' },
-  { day: { no: 'Julaften',       en: 'Christmas Eve'     }, time: '10:00–13:00' },
-  { day: { no: 'Romjul',         en: 'Between Christmas' }, time: '10:00–18:00' },
-  { day: { no: 'Nyttårsaften',   en: "New Year's Eve"    }, time: '10:00–15:00' },
+  { day: { no: 'Lørdag',         en: 'Saturday'         }, time: '10:00–18:00' },
+  { day: { no: 'Søndag',         en: 'Sunday'           }, time: { no: 'Stengt', en: 'Closed' } },
 ];
+
+export const openingHoursAker = [
+  { day: { no: 'Mandag – fredag', en: 'Monday – Friday' }, time: '10:00–19:00' },
+  { day: { no: 'Lørdag',         en: 'Saturday'         }, time: '10:00–18:00' },
+  { day: { no: 'Søndag',         en: 'Sunday'           }, time: { no: 'Stengt', en: 'Closed' } },
+];
+
+// Legacy export for backwards compatibility
+export const openingHours = openingHoursMajor;
